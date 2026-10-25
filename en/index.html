@@ -3,28 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kallistesoft — App Studio</title>
-<meta name="description" content="Kallistesoft is an independent Canadian studio making simple, beautiful, free mobile apps and games.">
+<title>Kallistesoft — Mobile apps, web apps and custom software</title>
+<meta name="description" content="Kallistesoft: a senior developer with 10 years of experience. iOS and Android apps, web apps and custom software, from idea to production.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="alternate" hreflang="fr-CA" href="https://kallistesoft.ca/">
 <link rel="alternate" hreflang="en-CA" href="https://kallistesoft.ca/en/">
 <meta property="og:title" content="Kallistesoft">
-<meta property="og:description" content="Independent mobile app and game studio.">
+<meta property="og:description" content="Mobile apps, web apps and custom software, designed and delivered end to end.">
 <meta property="og:url" content="https://kallistesoft.ca/en/">
+<meta name="theme-color" content="#060d24" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f8fc" media="(prefers-color-scheme: light)">
+<script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/site.js" defer></script>
 </head>
 <body>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="/en/"><img src="/assets/logo.svg" alt="" width="32" height="32">Kallistesoft</a>
-    <nav class="nav">
-      <a class="hide-sm" href="#apps">Apps</a>
-      <a class="hide-sm" href="#contact">Contact</a>
+    <a class="brand" href="/en/" aria-label="Kallistesoft, home"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#2f6bff"/><path d="M11 14V34M23 14 11 25.5M15 21.5 24 34M37 16.5C35.6 14.7 34 14 32.2 14 29.7 14 28 15.6 28 17.7 28 22.6 37 20.8 37 27.6 37 31.6 34.8 34 31.8 34 29.8 34 28.2 33.1 27 31.4" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>kalliste<span>soft</span></span></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="hide-sm" href="/en/#services">Services</a>
+      <a class="hide-sm" href="/en/#work">Work</a>
+      <a class="hide-sm" href="/en/#approach">Approach</a>
       <a class="lang" href="/" hreflang="fr" lang="fr">FR</a>
     </nav>
+    <button class="theme-toggle" type="button" aria-label="Change theme" data-to-light="Switch to light theme" data-to-dark="Switch to dark theme"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></button>
+    <a class="btn btn-primary btn-sm" href="/en/#contact">Contact</a>
   </div>
 </header>
 
@@ -32,126 +39,120 @@
   <section class="hero">
     <div class="wrap">
       <div>
-        <span class="eyebrow">Independent studio · Canada</span>
-        <h1>Simple, beautiful, useful apps.</h1>
-        <p class="lede">Kallistesoft makes games and mobile apps for iOS, Android and the web. Free, quick to pick up, no clutter.</p>
-        <div class="btns">
-          <a class="btn btn-primary" href="/en/block-daily/">Discover Block Daily</a>
-          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        <div class="status rv"><i></i>Available for new projects</div>
+        <h1 class="rv d1">Solid apps, designed and delivered <em>end to end</em>.</h1>
+        <p class="lede rv d2">Kallistesoft is a senior developer specialized in software and mobile, with 10 years of experience. iOS and Android apps, web apps and custom software, from idea to production.</p>
+        <div class="btns rv d3">
+          <a class="btn btn-primary" href="#contact">Discuss your project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="#work">See the work</a>
         </div>
       </div>
-      <div class="horizon" aria-hidden="true">
-        <svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice">
-          <defs>
-            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6d7b0"/><stop offset="1" stop-color="#fbeedd"/></linearGradient>
-            <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f86c9"/><stop offset="1" stop-color="#0f5c8c"/></linearGradient>
-          </defs>
-          <rect width="500" height="400" fill="url(#sky)"/>
-          <circle cx="350" cy="150" r="54" fill="#f2b134"/>
-          <path d="M0 250 90 150l50 50 70-95 90 115 50-40 150 70v60H0z" fill="#3f6f63"/>
-          <path d="M0 262 120 205l60 30 80-55 100 70 60-25 80 37v40H0z" fill="#2c5249"/>
-          <rect y="270" width="500" height="130" fill="url(#sea)"/>
-          <path d="M0 300c40 0 40 8 80 8s40-8 80-8 40 8 80 8 40-8 80-8 40 8 80 8 40-8 100-8" stroke="#63b6e6" stroke-width="4" fill="none" opacity=".7"/>
-          <path d="M0 340c40 0 40 8 80 8s40-8 80-8 40 8 80 8 40-8 80-8 40 8 80 8 40-8 100-8" stroke="#63b6e6" stroke-width="4" fill="none" opacity=".45"/>
-          <path d="M310 285h80" stroke="#f2b134" stroke-width="5" stroke-linecap="round" opacity=".8"/>
-          <path d="M325 305h50" stroke="#f2b134" stroke-width="4" stroke-linecap="round" opacity=".55"/>
-        </svg>
-      </div>
-    </div>
-  </section>
-
-  <section id="apps" class="alt">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Our apps</h2>
-        <p>Small, carefully made products, designed for everyday use.</p>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <div class="card-art"><div class="board" aria-hidden="true"><i></i><i></i><i class="c2"></i><i class="c2"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="c2"></i><i></i><i></i><i class="c4"></i><i class="c4"></i><i></i><i class="c1"></i><i class="c1"></i><i class="c1"></i><i class="c2"></i><i></i><i class="c4"></i><i class="c4"></i><i></i><i class="c3"></i><i class="c3"></i><i class="c3"></i><i class="c3"></i><i class="c3"></i><i class="c3"></i><i class="c3"></i><i class="c3"></i><i class="c5"></i><i></i><i></i><i class="c1"></i><i></i><i></i><i></i><i></i><i class="c5"></i><i class="c5"></i><i></i><i class="c1"></i><i></i><i></i><i class="c4"></i><i></i><i class="c5"></i><i></i><i></i><i class="c1"></i><i class="c1"></i><i></i><i class="c4"></i><i class="c4"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
-          <span class="tag">Game · iOS, Android, Web</span>
-          <h3>Block Daily</h3>
-          <p>A block puzzle: place the pieces, fill rows and columns, chain combos. Every day brings one challenge, the same for every player, to share with your friends.</p>
-          <a class="more" href="/en/block-daily/">Learn more →</a>
-        </article>
-        <article class="card">
-          <div class="card-art" aria-hidden="true"><svg viewBox="0 0 512 512" width="120" height="120" style="border-radius:14px"><defs><linearGradient id="nbc" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0B0620"/><stop offset="1" stop-color="#3A0B4D"/></linearGradient></defs><rect width="512" height="512" fill="url(#nbc)"/><g stroke-width="10" fill-opacity=".35"><rect x="96" y="120" width="96" height="44" rx="8" stroke="#FF2E97" fill="#FF2E97"/><rect x="208" y="120" width="96" height="44" rx="8" stroke="#FF8A2E" fill="#FF8A2E"/><rect x="320" y="120" width="96" height="44" rx="8" stroke="#FFE14D" fill="#FFE14D"/><rect x="152" y="184" width="96" height="44" rx="8" stroke="#3DFF8A" fill="#3DFF8A"/><rect x="264" y="184" width="96" height="44" rx="8" stroke="#8B5CFF" fill="#8B5CFF"/></g><circle cx="300" cy="300" r="26" fill="#fff"/><rect x="156" y="372" width="200" height="34" rx="17" fill="#22E6FF"/></svg></div>
-          <span class="tag">Game · Web, mobile soon</span>
-          <h3>Neon Breaker</h3>
-          <p>The arcade brick breaker, gone neon: every level different, difficulty that keeps climbing, and a boss to take down every fifth level.</p>
-          <a class="more" href="https://breaker.kallistesoft.ca/">Play →</a>
-        </article>
-        <article class="card">
-          <div class="card-art" aria-hidden="true"><svg viewBox="0 0 100 100" width="120" height="120" style="border-radius:14px"><defs><radialGradient id="vrc" cx="50%" cy="30%" r="80%"><stop offset="0" stop-color="#3a1460"/><stop offset="1" stop-color="#070712"/></radialGradient></defs><rect width="100" height="100" fill="url(#vrc)"/><path d="M38 22 L62 22 L68 30 L71 42 L63 37 L57 44 L43 44 L37 37 L29 42 L32 30 Z" fill="#4a0f3d" stroke="#ff4fd8" stroke-width="2.4" stroke-linejoin="round"/><circle cx="44" cy="31" r="2.6" fill="#fff"/><circle cx="56" cy="31" r="2.6" fill="#fff"/><line x1="50" y1="66" x2="50" y2="50" stroke="#fff" stroke-width="3" stroke-linecap="round"/><path d="M50 62 L57 74 L70 84 L70 88 L56 85 L50 89 L44 85 L30 88 L30 84 L43 74 Z" fill="#0b3f55" stroke="#38e1ff" stroke-width="2.4" stroke-linejoin="round"/><ellipse cx="50" cy="76" rx="2.5" ry="4.5" fill="#fff"/></svg></div>
-          <span class="tag">Game · Web, mobile soon</span>
-          <h3>Void Raid</h3>
-          <p>The arcade space shooter, gone neon: a new enemy formation every level, power-ups, and a boss to take down every fifth level.</p>
-          <a class="more" href="https://raid.kallistesoft.ca/">Play →</a>
-        </article>
-        <article class="card">
-          <div class="card-art" aria-hidden="true"><img src="/assets/neon-pop.png" alt="" width="120" height="120" style="border-radius:14px"></div>
-          <span class="tag">Game · Web, mobile soon</span>
-          <h3>Neon Pop</h3>
-          <p>The bubble shooter, gone neon: aim, bounce, pop. Every board different, and a bubble boss every fifth level.</p>
-          <a class="more" href="https://pop.kallistesoft.ca/">Play →</a>
-        </article>
-        <article class="card">
-          <div class="card-art" aria-hidden="true"><img src="/assets/neon-snake.png" alt="" width="120" height="120" style="border-radius:14px"></div>
-          <span class="tag">Game · Web, mobile soon</span>
-          <h3>Neon Snake</h3>
-          <p>The arcade snake, gone neon: a different arena every level, rival snakes, and a boss to take down every fifth level.</p>
-          <a class="more" href="https://snake.kallistesoft.ca/">Play →</a>
-        </article>
-        <article class="card">
-          <div class="card-art" aria-hidden="true"><img src="/assets/neon-stack.png" alt="" width="120" height="120" style="border-radius:14px"></div>
-          <span class="tag">Game · Web, mobile soon</span>
-          <h3>Neon Stack</h3>
-          <p>One tap, one floor: stack glowing blocks to the finish line, chain perfect drops, and topple a guardian every fifth level.</p>
-          <a class="more" href="https://stack.kallistesoft.ca/">Play →</a>
-        </article>
-        <article class="card">
-          <div class="card-art" aria-hidden="true">
-            <svg viewBox="0 0 120 90" width="140"><rect x="8" y="10" width="104" height="70" rx="10" fill="var(--surface)"/><rect x="20" y="22" width="60" height="7" rx="3.5" fill="var(--sea)"/><rect x="20" y="38" width="80" height="9" rx="4.5" fill="var(--cell)"/><rect x="20" y="52" width="80" height="9" rx="4.5" fill="#3fa66b"/><rect x="20" y="66" width="80" height="9" rx="4.5" fill="var(--cell)"/><circle cx="92" cy="56.5" r="3" fill="#fff"/></svg>
+      <div class="mock rv d4" aria-hidden="true">
+        <div class="win">
+          <div class="bar"><i></i><i></i><i></i></div>
+          <div class="body">
+            <div class="side"><span class="ln on" style="width:80%"></span><span class="ln"></span><span class="ln" style="width:70%"></span><span class="ln" style="width:85%"></span></div>
+            <div class="main"><span class="ttl"></span><div class="tiles"><span class="tile"></span><span class="tile"></span><span class="tile on"></span></div><span class="ln"></span><span class="ln" style="width:88%"></span><span class="ln" style="width:64%"></span></div>
           </div>
-          <span class="tag soon">In development</span>
-          <h3>BetterHunter</h3>
-          <p>Hunt better: tell game species apart, know the rules, and prepare for the firearms licence (PAL, CFSC) and the Québec (ICAF) and Alberta hunter exams. In English and French.</p>
-          <p style="font-size:.8rem">Independent study aid, not affiliated with the RCMP, the Government of Québec or FédéCP. Unofficial: original questions, not the exam’s own. Errors are possible, always check the official manual.</p>
-          <a class="more" href="https://hunt.kallistesoft.ca/">Try the demo →</a>
+        </div>
+        <div class="phone float"><span class="ln notch"></span><span class="ttl" style="width:70%;height:10px"></span><span class="tile big"></span><span class="tile"></span><span class="tile"></span><span class="cta"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="alt">
+    <div class="wrap">
+      <div class="section-head sr">
+        <span class="kicker">01 — Services</span>
+        <h2>One point of contact, from first sketch to launch.</h2>
+      </div>
+      <div class="grid-3">
+        <article class="card sr">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
+          <h3>Mobile apps</h3>
+          <p>iOS and Android, native (Swift, Kotlin) or cross-platform (Flutter). Publishing on the App Store and Google Play.</p>
+        </article>
+        <article class="card sr">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01"/></svg>
+          <h3>Web apps and websites</h3>
+          <p>Fast, accessible websites, rich web apps, hosting and continuous deployment.</p>
+        </article>
+        <article class="card sr">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>
+          <h3>Custom software</h3>
+          <p>Secure business tools, data processing, automation: built around the way you work.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section>
+  <section id="work">
     <div class="wrap">
-      <div class="section-head">
-        <h2>Our approach</h2>
-        <p>Kallisté, the ancient name of Corsica, means “the most beautiful”. That's the bar we set for ourselves.</p>
+      <div class="section-head sr">
+        <span class="kicker">02 — Work</span>
+        <h2>Recent projects.</h2>
       </div>
-      <div class="values">
-        <div><h3>Simple</h3><p>You get the app within seconds. No mandatory account, no needless menus.</p></div>
-        <div><h3>Respectful</h3><p>Free and ad-supported, but never mid-game. As little data as possible.</p></div>
-        <div><h3>Bilingual</h3><p>Made in Canada, in French and English, and open to the world.</p></div>
+      <div class="grid-2">
+        <article class="card sr">
+          <div class="chips"><span>Web app</span><span>Client · immigration law</span></div>
+          <h3 style="font-size:1.75rem">LawyerTool</h3>
+          <p>Immigration eligibility pre-audit for a law firm. Deterministic calculations, encrypted data that never leaves the firm's computer, Word report generation.</p>
+          <div class="tech">Rust · WebAssembly · Svelte</div>
+        </article>
+        <article class="card sr">
+          <div class="chips"><span>Mobile app</span><span>Kallistesoft product</span></div>
+          <h3 style="font-size:1.75rem">BetterHunter</h3>
+          <p>Tell game species apart, know the rules, and prepare for the firearms licence and hunter exams in Québec and Alberta. In English and French. <a href="https://hunt.kallistesoft.ca/">Try the demo</a></p>
+          <p class="note">Independent study aid, not affiliated with the RCMP, the Government of Québec or FédéCP.</p>
+          <div class="tech">Kotlin · Swift · native</div>
+        </article>
+      </div>
+      <div class="lab sr">
+        <div>
+          <div class="label">Lab · games</div>
+          <p>Our games double as a testing ground: performance, monetization, cross-platform publishing.</p>
+        </div>
+        <nav aria-label="Our games">
+          <a class="nl" href="/en/block-daily/">Block Daily</a>
+          <a class="nl" href="/en/neon-breaker/">Neon Breaker</a>
+          <a class="nl" href="/en/void-raid/">Void Raid</a>
+          <a class="nl" href="/en/neon-pop/">Neon Pop</a>
+          <a class="nl" href="/en/neon-snake/">Neon Snake</a>
+          <a class="nl" href="/en/neon-stack/">Neon Stack</a>
+        </nav>
       </div>
     </div>
   </section>
 
-  <section id="contact">
+  <section id="approach" class="alt">
     <div class="wrap">
-      <div class="contact-box">
-        <h2>A question, a problem, an idea?</h2>
-        <p>Support, partnerships or just feedback: we answer every message.</p>
-        <a class="mail" href="mailto:contact@kallistesoft.ca">contact@kallistesoft.ca</a>
+      <div class="section-head sr">
+        <span class="kicker">03 — Approach</span>
+        <h2>Simple, transparent, delivered.</h2>
       </div>
+      <ol class="steps">
+        <li class="sr"><div class="n">01</div><h3>Understand</h3><p>Your needs, your users, your constraints. A clear, priced scope.</p></li>
+        <li class="sr"><div class="n">02</div><h3>Design</h3><p>Mock-ups, architecture, technical choices explained in plain words.</p></li>
+        <li class="sr"><div class="n">03</div><h3>Build</h3><p>Frequent deliveries, automated tests, versions to try throughout the project.</p></li>
+        <li class="sr"><div class="n">04</div><h3>Maintain</h3><p>Launch, monitoring, store updates and new features.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="contact" class="cta">
+    <div class="wrap sr">
+      <h2>Have an app project in mind?</h2>
+      <p>Describe it in a few lines. Quick reply, in English or French.</p>
+      <a class="btn btn-primary" href="mailto:contact@kallistesoft.ca">contact@kallistesoft.ca <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <p class="small">Support for our apps and games: same address.</p>
     </div>
   </section>
 </main>
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>© 2026 Kallistesoft</span>
-    <nav>
+    <span>© 2026 Kallistesoft · Canada</span>
+    <nav aria-label="Footer">
       <a href="/en/block-daily/">Block Daily</a>
       <a href="/en/neon-breaker/">Neon Breaker</a>
       <a href="/en/void-raid/">Void Raid</a>

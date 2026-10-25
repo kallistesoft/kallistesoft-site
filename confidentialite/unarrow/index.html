@@ -11,20 +11,27 @@
 <meta property="og:title" content="Unarrow — Politique de confidentialité — Kallistesoft">
 <meta property="og:description" content="Politique de confidentialité de l'application Unarrow (Android).">
 <meta property="og:url" content="https://kallistesoft.ca/confidentialite/unarrow/">
+<meta name="theme-color" content="#060d24" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f8fc" media="(prefers-color-scheme: light)">
+<script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/site.js" defer></script>
 </head>
 <body>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="/"><img src="/assets/logo.svg" alt="" width="32" height="32">Kallistesoft</a>
-    <nav class="nav">
-      <a class="hide-sm" href="/#apps">Applications</a>
-      <a class="hide-sm" href="/#contact">Contact</a>
+    <a class="brand" href="/" aria-label="Kallistesoft, accueil"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#2f6bff"/><path d="M11 14V34M23 14 11 25.5M15 21.5 24 34M37 16.5C35.6 14.7 34 14 32.2 14 29.7 14 28 15.6 28 17.7 28 22.6 37 20.8 37 27.6 37 31.6 34.8 34 31.8 34 29.8 34 28.2 33.1 27 31.4" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>kalliste<span>soft</span></span></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="hide-sm" href="/#services">Services</a>
+      <a class="hide-sm" href="/#realisations">Réalisations</a>
+      <a class="hide-sm" href="/#approche">Approche</a>
       <a class="lang" href="/en/privacy/unarrow/" hreflang="en" lang="en">EN</a>
     </nav>
+    <button class="theme-toggle" type="button" aria-label="Changer de thème" data-to-light="Passer au thème clair" data-to-dark="Passer au thème sombre"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></button>
+    <a class="btn btn-primary btn-sm" href="/#contact">Contact</a>
   </div>
 </header>
 
@@ -77,7 +84,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>© 2026 Kallistesoft</span>
+    <span>© 2026 Kallistesoft · Canada</span>
     <nav>
       <a href="/block-daily/">Block Daily</a>
       <a href="/neon-breaker/">Neon Breaker</a>
