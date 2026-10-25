@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Audit et accompagnement d'équipes de développement — Kallistesoft</title>
+<meta name="description" content="Expérience de tech lead et de développeur senior en grande entreprise, mise au service des petites équipes de développement en PME : processus, revue de code, CI/CD, tech lead à temps partiel, coaching.">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" hreflang="fr-CA" href="https://kallistesoft.ca/audit-equipe/">
+<link rel="alternate" hreflang="en-CA" href="https://kallistesoft.ca/en/team-audit/">
+<meta property="og:title" content="Audit et accompagnement d'équipes de développement">
+<meta property="og:description" content="Les pratiques d'une grande équipe, à l'échelle de la vôtre.">
+<meta property="og:url" content="https://kallistesoft.ca/audit-equipe/">
+<meta name="theme-color" content="#060d24" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f8fc" media="(prefers-color-scheme: light)">
+<script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/site.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Kallistesoft, accueil"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#2f6bff"/><path d="M11 14V34M23 14 11 25.5M15 21.5 24 34M37 16.5C35.6 14.7 34 14 32.2 14 29.7 14 28 15.6 28 17.7 28 22.6 37 20.8 37 27.6 37 31.6 34.8 34 31.8 34 29.8 34 28.2 33.1 27 31.4" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>kalliste<span>soft</span></span></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="hide-sm" href="/#services">Services</a>
+      <a class="hide-sm" href="/#realisations">Réalisations</a>
+      <a class="hide-sm" href="/#approche">Approche</a>
+      <a class="hide-sm" href="/audit-equipe/">Équipes</a>
+      <a class="lang" href="/en/team-audit/" hreflang="en" lang="en">EN</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Changer de thème" data-to-light="Passer au thème clair" data-to-dark="Passer au thème sombre"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></button>
+    <a class="btn btn-primary btn-sm" href="/#contact">Contact</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap narrow">
+      <div>
+        <span class="eyebrow rv">Équipes de développement · PME</span>
+        <h1 class="rv d1">Les pratiques d'une grande équipe, <em>à l'échelle de la vôtre</em>.</h1>
+        <p class="lede rv d2">J'ai été tech lead et développeur senior en grande entreprise. Dans une PME, l'équipe de développement compte souvent deux à dix personnes, sans personne d'expérimenté pour l'encadrer. Je vous aide à mettre en place des méthodes simples et solides, sans la bureaucratie.</p>
+        <div class="btns rv d3">
+          <a class="btn btn-primary" href="#contact">Discuter de votre équipe <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a class="btn btn-ghost" href="#demarche">Voir la démarche</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head sr">
+        <span class="kicker">01 — Constat</span>
+        <h2>Ça vous dit quelque chose ?</h2>
+      </div>
+      <div class="features">
+        <div class="card sr"><h3>Des mises en production stressantes</h3><p>Chaque livraison casse quelque chose, et les correctifs se font en urgence.</p></div>
+        <div class="card sr"><h3>Pas de revue de code ni de tests</h3><p>Le code part en production sans second regard, et personne n'ose y toucher.</p></div>
+        <div class="card sr"><h3>Tout repose sur une personne</h3><p>Un seul développeur connaît le système. S'il part en vacances, tout s'arrête.</p></div>
+        <div class="card sr"><h3>Des estimations qui dérapent</h3><p>Les délais annoncés ne tiennent jamais, et la direction ne sait plus à quoi s'attendre.</p></div>
+        <div class="card sr"><h3>Une dette technique qui grossit</h3><p>Chaque nouvelle fonctionnalité coûte plus cher que la précédente.</p></div>
+        <div class="card sr"><h3>Des juniors laissés à eux-mêmes</h3><p>Vos développeurs veulent progresser, mais personne n'a le temps de les guider.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head sr">
+        <span class="kicker">02 — Formules</span>
+        <h2>Trois façons de travailler ensemble.</h2>
+      </div>
+      <div class="grid-3">
+        <article class="card sr">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M4 12h16M4 18h7"/><path d="m16 15 2.5 2.5L23 13"/></svg>
+          <h3>Amélioration des processus</h3>
+          <p>On part d'un diagnostic : code, dépôts, intégration continue, façon de travailler. Puis on met en place, avec l'équipe, ce qui manque.</p>
+          <ul class="checks"><li>Règles de branches et de pull requests</li><li>Revue de code</li><li>Tests automatisés</li><li>CI/CD et processus de livraison</li><li>Estimation et planification</li></ul>
+        </article>
+        <article class="card sr">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 3 7l9 5 9-5-9-5Z"/><path d="m3 17 9 5 9-5M3 12l9 5 9-5"/></svg>
+          <h3>Tech lead à temps partiel</h3>
+          <p>Un tech lead expérimenté, quelques jours par mois, sans le coût d'un poste à temps plein.</p>
+          <ul class="checks"><li>Décisions d'architecture</li><li>Priorités techniques</li><li>Recrutement et entrevues techniques</li><li>Lien entre l'équipe et la direction</li></ul>
+        </article>
+        <article class="card sr">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.6-3.4 3.2-5.5 6.5-5.5s5.9 2.1 6.5 5.5M16 4.8a3.5 3.5 0 0 1 0 6.4M18.5 14.9c1.6.9 2.7 2.6 3 5.1"/></svg>
+          <h3>Coaching des développeurs</h3>
+          <p>Faire grandir les développeurs que vous avez déjà, directement sur votre code.</p>
+          <ul class="checks"><li>Programmation en binôme</li><li>Revues de code commentées</li><li>Plans de progression individuels</li><li>Bonnes pratiques et outils</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="demarche" class="alt">
+    <div class="wrap">
+      <div class="section-head sr">
+        <span class="kicker">03 — Démarche</span>
+        <h2>Concret, mesurable, et votre équipe reste autonome.</h2>
+      </div>
+      <ol class="steps">
+        <li class="sr"><div class="n">01</div><h3>Diagnostic</h3><p>Entretiens avec l'équipe et la direction, revue du code, des dépôts et du pipeline.</p></li>
+        <li class="sr"><div class="n">02</div><h3>Recommandations</h3><p>Un rapport écrit et priorisé : gains rapides, chantiers de fond, feuille de route.</p></li>
+        <li class="sr"><div class="n">03</div><h3>Mise en place</h3><p>Je travaille avec l'équipe, sur vos projets réels, pas sur des présentations.</p></li>
+        <li class="sr"><div class="n">04</div><h3>Transmission</h3><p>Pratiques documentées. L'équipe continue seule, et je reste disponible au besoin.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head sr">
+        <span class="kicker">04 — Pourquoi moi</span>
+        <h2>L'expérience de la grande entreprise, sans la lourdeur.</h2>
+      </div>
+      <div class="features">
+        <div class="card sr"><h3>Expérience terrain</h3><p>Des années comme tech lead et développeur senior dans de grandes organisations, sur des projets critiques.</p></div>
+        <div class="card sr"><h3>Toujours dans le code</h3><p>J'écris encore du code de production tous les jours : applications mobiles, web et logiciel sur mesure.</p></div>
+        <div class="card sr"><h3>Adapté à votre taille</h3><p>Je ne garde que ce qui sert à une équipe de quelques personnes. En français ou en anglais, à distance ou sur place.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="cta alt">
+    <div class="wrap sr">
+      <h2>Parlons de votre équipe.</h2>
+      <p>Décrivez votre équipe et ce qui coince en quelques lignes. Premier échange sans engagement.</p>
+      <a class="btn btn-primary" href="mailto:contact@kallistesoft.ca?subject=Audit%20d'%C3%A9quipe">contact@kallistesoft.ca <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Kallistesoft · Canada</span>
+    <nav>
+      <a href="/block-daily/">Block Daily</a>
+      <a href="/neon-breaker/">Neon Breaker</a>
+      <a href="/void-raid/">Void Raid</a>
+      <a href="/neon-pop/">Neon Pop</a>
+      <a href="/neon-snake/">Neon Snake</a>
+      <a href="/neon-stack/">Neon Stack</a>
+      <a href="/audit-equipe/">Audit d'équipe</a>
+      <a href="/confidentialite/">Confidentialité</a>
+      <a href="mailto:contact@kallistesoft.ca">Contact</a>
+      <a href="/en/" hreflang="en">English</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
