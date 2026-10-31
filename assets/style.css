@@ -254,3 +254,12 @@ a.store svg { width: 18px; height: 18px; }
 .card.feature:hover .device .handset { transform: translateY(-6px); }
 .device .handset { transition: transform .6s var(--ease); }
 .projects > .card:not(.feature) p { max-width: 52em; }
+/* Phones: the desktop screenshot is unreadable at this size, so show only the
+   phone mockup, larger, as a "peek" above the text. */
+@media (max-width: 699px) {
+  .card.feature { gap: 24px; }
+  .device { order: -1; display: flex; justify-content: center; height: 300px; padding: 28px 0 0; overflow: hidden; border-radius: 12px; background: var(--bg2); border: 1px solid var(--line); }
+  .device .browser { display: none; }
+  .device .handset { position: static; width: 210px; min-width: 0; border-bottom: 0; border-radius: 28px 28px 0 0; align-self: flex-start; }
+  .card.feature:hover .device .handset { transform: none; }
+}
