@@ -258,5 +258,3 @@ a.store svg { width: 18px; height: 18px; }
   .device .handset { position: static; width: 210px; min-width: 0; border-bottom: 0; border-radius: 28px 28px 0 0; align-self: flex-start; }
   .card.feature:hover .device .handset { transform: none; }
 }
-.card .site-url { display: table; margin-top: 12px; font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: .85rem; color: var(--muted2); text-decoration: none; align-self: flex-start; }
-.card .site-url:hover { color: var(--accent-t); text-decoration: underline; }
