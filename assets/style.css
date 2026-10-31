@@ -232,11 +232,6 @@ a.store { border-style: solid; border-color: var(--accent); color: var(--strong)
 a.store:hover { background: var(--chip); color: var(--strong); transform: translateY(-2px); }
 a.store svg { width: 18px; height: 18px; }
 
-/* Arrow puzzle art (Unarrow) */
-.arrows { width: 100%; max-width: 340px; aspect-ratio: 1; padding: 18px; border-radius: 24px; background: var(--surface); border: 1px solid var(--card); box-shadow: 0 30px 70px var(--shadow); }
-.arrows svg { display: block; width: 100%; height: 100%; }
-.arrows .c { fill: var(--cell); }
-.card-art .arrows { max-width: 130px; padding: 6px; border-radius: 10px; box-shadow: none; }
 
 /* Projects list and featured client project with a device mockup */
 .projects { display: grid; gap: 20px; }
@@ -263,3 +258,5 @@ a.store svg { width: 18px; height: 18px; }
   .device .handset { position: static; width: 210px; min-width: 0; border-bottom: 0; border-radius: 28px 28px 0 0; align-self: flex-start; }
   .card.feature:hover .device .handset { transform: none; }
 }
+.card .site-url { display: table; margin-top: 12px; font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: .85rem; color: var(--muted2); text-decoration: none; align-self: flex-start; }
+.card .site-url:hover { color: var(--accent-t); text-decoration: underline; }
