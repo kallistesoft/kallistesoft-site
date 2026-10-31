@@ -226,3 +226,31 @@ section { padding: 72px 0; }
 .checks { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 8px; }
 .checks li { position: relative; padding-left: 26px; color: var(--muted); font-size: .95rem; }
 .checks li::before { content: ""; position: absolute; left: 2px; top: .45em; width: 12px; height: 7px; border-left: 2px solid var(--accent-t); border-bottom: 2px solid var(--accent-t); transform: rotate(-45deg); }
+
+/* Store buttons: live links (the dashed .store span means "coming soon") */
+a.store { border-style: solid; border-color: var(--accent); color: var(--strong); font-weight: 700; text-decoration: none; gap: 8px; transition: background-color .3s, transform .3s var(--ease); }
+a.store:hover { background: var(--chip); color: var(--strong); transform: translateY(-2px); }
+a.store svg { width: 18px; height: 18px; }
+
+/* Arrow puzzle art (Unarrow) */
+.arrows { width: 100%; max-width: 340px; aspect-ratio: 1; padding: 18px; border-radius: 24px; background: var(--surface); border: 1px solid var(--card); box-shadow: 0 30px 70px var(--shadow); }
+.arrows svg { display: block; width: 100%; height: 100%; }
+.arrows .c { fill: var(--cell); }
+.card-art .arrows { max-width: 130px; padding: 6px; border-radius: 10px; box-shadow: none; }
+
+/* Projects list and featured client project with a device mockup */
+.projects { display: grid; gap: 20px; }
+.card.feature { display: grid; gap: 32px; align-items: center; }
+@media (min-width: 900px) { .card.feature { grid-template-columns: .9fr 1.1fr; padding: 40px; } }
+.card.feature .btn { align-self: flex-start; margin-top: 8px; }
+.card .tech + .btn { margin-top: 18px; }
+.device { position: relative; padding: 0 0 28px; }
+.device .browser { margin-right: 56px; border-radius: 12px; overflow: hidden; background: var(--m-win); border: 1px solid var(--m-border); box-shadow: 0 30px 70px var(--shadow); }
+.device .browser .bar { display: flex; align-items: center; gap: 6px; padding: 9px 12px; border-bottom: 1px solid var(--m-border); }
+.device .browser .bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--m-bar); }
+.device .browser .bar span { margin-left: 10px; flex: 1; min-width: 0; padding: 3px 10px; border-radius: 6px; background: var(--m-tile); color: var(--muted2); font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: .7rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.device img { display: block; width: 100%; height: auto; }
+.device .handset { position: absolute; right: 0; bottom: 0; width: 26%; min-width: 92px; border-radius: 20px; overflow: hidden; border: 5px solid var(--m-phone-b); background: var(--m-phone); box-shadow: 0 24px 50px var(--shadow); }
+.card.feature:hover .device .handset { transform: translateY(-6px); }
+.device .handset { transition: transform .6s var(--ease); }
+.projects > .card:not(.feature) p { max-width: 52em; }
