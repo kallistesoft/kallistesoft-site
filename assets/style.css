@@ -258,3 +258,9 @@ a.store svg { width: 18px; height: 18px; }
   .device .handset { position: static; width: 210px; min-width: 0; border-bottom: 0; border-radius: 28px 28px 0 0; align-self: flex-start; }
   .card.feature:hover .device .handset { transform: none; }
 }
+
+/* Released games on the home page */
+.card.game { align-items: flex-start; }
+.game-icon { width: 84px; height: 84px; border-radius: 20px; margin-bottom: 18px; }
+.card.game .stores { margin-top: auto; align-items: center; gap: 10px 18px; padding-top: 8px; }
+.card.game .nl { color: var(--strong); font-weight: 700; }
