@@ -40,3 +40,11 @@
 
   label();
 })();
+
+// FR/EN links: remember the choice so the home page stops following the
+// browser's language (see .htaccess).
+document.querySelectorAll('a[hreflang]').forEach(function (link) {
+  link.addEventListener('click', function () {
+    document.cookie = 'lang=' + link.hreflang.slice(0, 2) + '; path=/; max-age=31536000; SameSite=Lax';
+  });
+});
