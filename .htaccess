@@ -9,5 +9,15 @@ RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\.kallistesoft\.ca$ [NC]
 RewriteRule ^ https://kallistesoft.ca%{REQUEST_URI} [R=301,L]
 
+# The home page opens in the browser's language: French stays at /, anything
+# else goes to /en/. The FR/EN links store the visitor's choice in a lang cookie
+# (assets/site.js), which wins. No Accept-Language (crawlers) stays at /.
+RewriteCond %{HTTP_COOKIE} (^|;\s*)lang=en(;|$)
+RewriteRule ^$ /en/ [R=302,L]
+RewriteCond %{HTTP_COOKIE} !(^|;\s*)lang=fr(;|$)
+RewriteCond %{HTTP:Accept-Language} !^$
+RewriteCond %{HTTP:Accept-Language} !^fr [NC]
+RewriteRule ^$ /en/ [R=302,L]
+
 # Neon Breaker was renamed Brick Shatter: Neon Breaker.
 RewriteRule ^(en/)?neon-breaker(/.*)?$ https://kallistesoft.ca/$1brick-shatter/ [R=301,L]
