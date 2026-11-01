@@ -8,3 +8,6 @@ RewriteEngine On
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\.kallistesoft\.ca$ [NC]
 RewriteRule ^ https://kallistesoft.ca%{REQUEST_URI} [R=301,L]
+
+# Neon Breaker was renamed Brick Shatter: Neon Breaker.
+RewriteRule ^(en/)?neon-breaker(/.*)?$ https://kallistesoft.ca/$1brick-shatter/ [R=301,L]
