@@ -8,4 +8,5 @@ Static site for Kallistesoft, hosted on the GoDaddy web hosting at https://kalli
 - Light and dark themes: each page's `<head>` has a one-line inline script that sets `<html data-theme>` before paint (the visitor's stored choice, else the system setting). `site.js` drives the sun/moon button in the header and remembers the choice in `localStorage`. Colours are CSS variables at the top of `style.css`, defined once per theme.
 - Every page shares the same header (logo, Services / Réalisations / Jeux / Approche / Équipes, language link, theme button, Contact). Keep it identical when adding a page.
 - Home page: a game released on a store gets a card in the Jeux section (`#jeux` ↔ `#games`). The others stay in the Labo strip under Réalisations until they ship.
+- `sitemap.xml` lists every indexable page. Add a new page there; redirect and `noindex` pages stay out.
 - Preview locally: `python3 -m http.server` and open http://localhost:8000.
