@@ -21,3 +21,18 @@ RewriteRule ^$ /en/ [R=302,L]
 
 # Neon Breaker was renamed Brick Shatter: Neon Breaker.
 RewriteRule ^(en/)?neon-breaker(/.*)?$ https://kallistesoft.ca/$1brick-shatter/ [R=301,L]
+
+# Caching: HTML is always revalidated; CSS/JS are referenced with ?v=… so
+# they can be cached for a day (bump the version in every page when they
+# change); images for a month.
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=86400, must-revalidate"
+  </FilesMatch>
+  <FilesMatch "\.(png|jpg|jpeg|webp|svg|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
