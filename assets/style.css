@@ -108,6 +108,7 @@ html[data-theme] .theme-toggle { display: inline-flex; }
 .btn-primary:hover { background: var(--accent-h); color: #fff; }
 .btn-ghost { border-color: var(--line2); color: var(--strong); background: transparent; font-weight: 600; }
 .btn-ghost:hover { border-color: var(--accent); color: var(--strong); }
+button.btn { font-family: inherit; font-size: inherit; cursor: pointer; }
 .btn-sm { min-height: 44px; padding: 0 18px; font-size: .94rem; border-radius: 10px; }
 
 /* Sections */
@@ -268,65 +269,28 @@ a.store svg { width: 18px; height: 18px; }
 @media (min-width: 700px) { .grid-2.games { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .card.game.wide { grid-column: 1 / -1; }
 
-/* Home: Far West Frontier showcase (top of the page). Always a dark, warm
-   cinematic band, whatever the theme: colours are fixed here on purpose. */
-.showcase { --fw-bg: #07101f; --fw-text: #f3ecdf; --fw-muted: #c9bfae; --fw-gold: #e3a94f; --fw-line: rgba(255, 255, 255, .14); --fw-chip: rgba(255, 255, 255, .09);
-  position: relative; overflow: hidden; padding: 56px 0 64px; color: var(--fw-text); background: var(--fw-bg); border-bottom: 1px solid var(--fw-line); }
-.showcase::before { content: ""; position: absolute; inset: 0; pointer-events: none; background:
-  radial-gradient(60% 55% at 85% 10%, rgba(227, 169, 79, .32), transparent 70%),
-  radial-gradient(45% 50% at 10% 90%, rgba(47, 107, 255, .28), transparent 70%),
-  radial-gradient(70% 60% at 50% 100%, rgba(120, 60, 20, .25), transparent 70%); }
-@media (min-width: 900px) { .showcase { padding: 80px 0 88px; } }
-.showcase .wrap { position: relative; }
-.showcase .top { display: grid; gap: 36px; align-items: center; }
-@media (min-width: 900px) { .showcase .top { grid-template-columns: .85fr 1.15fr; gap: 56px; } }
-.showcase .chips span { background: var(--fw-chip); color: var(--fw-text); border: 1px solid var(--fw-line); }
-.showcase .chips .live { color: #09111f; background: var(--fw-gold); border-color: var(--fw-gold); }
-.fw-logo { display: block; width: min(68%, 300px); height: auto; margin: 0 0 22px; filter: drop-shadow(0 18px 40px rgba(0, 0, 0, .55)); }
-@media (min-width: 900px) { .fw-logo { width: min(100%, 340px); } }
-.showcase h2 { color: #fff; font-size: clamp(1.9rem, 3.8vw, 3rem); margin: 0 0 .4em; }
-.showcase h2 em { font-style: normal; color: var(--fw-gold); }
-.showcase .lede { color: var(--fw-muted); font-size: 1.08rem; margin-bottom: 22px; }
-.fw-facts { list-style: none; margin: 0 0 28px; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: .82rem; color: var(--fw-muted); }
-.fw-facts b { color: #fff; font-weight: 700; }
-.showcase .btn-primary { background: var(--fw-gold); color: #09111f; }
-.showcase .btn-primary:hover { background: #f0bb62; color: #09111f; }
-.showcase .btn-primary svg { transition: transform .3s var(--ease); }
-.showcase .btn-primary:hover svg { transform: scale(1.12); }
-.showcase .store { border-color: var(--fw-line); color: var(--fw-muted); }
-.showcase .langs { margin: 16px 0 0; font-size: .85rem; color: var(--fw-muted); }
-/* Trailer: poster + play button; the YouTube iframe is injected on click (site.js). */
-.trailer { position: relative; aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden; background: #000; border: 1px solid var(--fw-line); box-shadow: 0 40px 100px rgba(0, 0, 0, .6); }
-.trailer img, .trailer iframe { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border: 0; display: block; }
-.trailer .play { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background: linear-gradient(to top, rgba(0, 0, 0, .55), rgba(0, 0, 0, 0) 55%); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .4s; }
-.trailer .play:hover { background: linear-gradient(to top, rgba(0, 0, 0, .65), rgba(0, 0, 0, .12) 55%); }
-.trailer .play i { width: 84px; height: 84px; border-radius: 50%; background: var(--fw-gold); display: grid; place-items: center; box-shadow: 0 16px 40px rgba(0, 0, 0, .5); transition: transform .4s var(--ease); }
-.trailer .play:hover i { transform: scale(1.08); }
-.trailer .play svg { width: 34px; height: 34px; margin-left: 5px; color: #09111f; }
-.trailer .play span { position: absolute; left: 20px; bottom: 16px; font-weight: 700; font-size: .95rem; text-shadow: 0 2px 10px rgba(0, 0, 0, .6); }
-.trailer .play .dur { left: auto; right: 20px; font-weight: 600; font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: .8rem; color: var(--fw-muted); }
-/* Screenshots: swipe strip on phones, 4-column grid from tablets up. */
-.shots-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; margin: 48px 0 16px; }
-.shots-head h3 { margin: 0; color: #fff; font-size: 1.05rem; letter-spacing: 0; }
-.shots-head span { font-size: .82rem; color: var(--fw-muted); }
-.shots { display: flex; gap: 12px; margin: 0 -16px; padding: 4px 16px 10px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-.shots::-webkit-scrollbar { display: none; }
-.shots button { flex: 0 0 min(76vw, 340px); scroll-snap-align: start; aspect-ratio: 16 / 9; padding: 0; border: 1px solid var(--fw-line); border-radius: 14px; overflow: hidden; background: #000; cursor: zoom-in; transition: transform .45s var(--ease), border-color .3s; }
-.shots button:hover { transform: translateY(-5px); border-color: var(--fw-gold); }
-.shots img { display: block; width: 100%; height: 100%; object-fit: cover; }
-@media (min-width: 700px) { .shots { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0; padding: 0; overflow: visible; } .shots button { flex: none; } }
-.shots-head span.hide-md { display: inline; }
-@media (min-width: 700px) { .shots-head span.hide-md { display: none; } }
-/* Lightbox for the screenshots */
-.lightbox { border: 0; padding: 0; background: transparent; max-width: none; max-height: none; width: 100vw; height: 100dvh; margin: 0; display: none; place-items: center; }
-.lightbox[open] { display: grid; }
-.lightbox::backdrop { background: rgba(3, 7, 18, .9); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
-.lightbox figure { margin: 0; max-width: min(96vw, 1400px); animation: up .45s var(--ease) both; }
-.lightbox img { display: block; width: 100%; max-height: 82dvh; object-fit: contain; border-radius: 12px; box-shadow: 0 40px 100px rgba(0, 0, 0, .7); }
-.lightbox figcaption { margin-top: 12px; text-align: center; color: #d9d3c6; font-size: .95rem; }
-.lightbox .lb-btn { position: fixed; top: 50%; width: 48px; height: 48px; margin-top: -24px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .25); background: rgba(10, 16, 36, .7); color: #fff; cursor: pointer; display: grid; place-items: center; transition: background .3s, transform .3s var(--ease); }
-.lightbox .lb-btn:hover { background: rgba(47, 107, 255, .85); transform: scale(1.06); }
-.lightbox .lb-btn svg { width: 22px; height: 22px; }
-.lightbox .prev { left: 12px; } .lightbox .next { right: 12px; }
-.lightbox .close { top: 16px; right: 16px; margin: 0; }
-@media (max-width: 699px) { .lightbox .prev, .lightbox .next { top: auto; bottom: 20px; margin: 0; } }
+/* Far West Frontier feature card: same layout as the client cards, with a
+   landscape phone and a trailer button that opens the video in a modal. */
+.device.landscape .browser { margin-right: 0; margin-bottom: 36px; }
+.device.landscape .browser .shot { position: relative; }
+.device.landscape .handset { width: 44%; min-width: 160px; aspect-ratio: 2.08 / 1; border-radius: 18px; border-width: 5px; bottom: 0; right: 0; }
+.device.landscape .handset img { width: 100%; height: 100%; object-fit: cover; }
+.play-badge { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; padding: 0; border: 0; background: linear-gradient(to top, rgba(6, 13, 36, .55), rgba(6, 13, 36, 0) 60%); color: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background .4s; }
+.play-badge:hover { background: linear-gradient(to top, rgba(6, 13, 36, .65), rgba(6, 13, 36, .15) 60%); }
+.play-badge i { width: 64px; height: 64px; border-radius: 50%; background: var(--accent); display: grid; place-items: center; box-shadow: 0 14px 34px rgba(0, 0, 0, .45); transition: transform .4s var(--ease); }
+.play-badge:hover i { transform: scale(1.08); }
+.play-badge svg { width: 26px; height: 26px; margin-left: 4px; }
+.play-badge span { position: absolute; left: 16px; bottom: 12px; font-weight: 700; font-size: .9rem; text-shadow: 0 2px 8px rgba(0, 0, 0, .6); }
+.play-badge .dur { left: auto; right: 16px; font-weight: 600; font-family: "JetBrains Mono", ui-monospace, Menlo, monospace; font-size: .78rem; opacity: .85; }
+@media (max-width: 699px) {
+  .device.landscape { height: auto; padding: 20px 20px 0; }
+  .device.landscape .handset { width: 100%; max-width: 360px; min-width: 0; aspect-ratio: 2.2 / 1; border-radius: 18px 18px 0 0; }
+}
+/* Trailer modal */
+.video-modal { border: 0; padding: 0; background: transparent; width: min(96vw, 1100px); max-width: none; overflow: visible; }
+.video-modal::backdrop { background: rgba(3, 7, 18, .88); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.video-modal .frame { aspect-ratio: 16 / 9; background: #000; border-radius: 14px; overflow: hidden; box-shadow: 0 40px 100px rgba(0, 0, 0, .7); animation: up .45s var(--ease) both; }
+.video-modal iframe { display: block; width: 100%; height: 100%; border: 0; }
+.video-modal .close { position: absolute; right: 0; top: -56px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .3); background: rgba(10, 16, 36, .7); color: #fff; cursor: pointer; display: grid; place-items: center; transition: background .3s; }
+.video-modal .close:hover { background: var(--accent); }
+.video-modal .close svg { width: 22px; height: 22px; }
