@@ -72,3 +72,24 @@ document.querySelectorAll('a[hreflang]').forEach(function (link) {
   dialog.addEventListener('click', function (e) { if (e.target === dialog) dialog.close(); });
   dialog.addEventListener('close', function () { frame.replaceChildren(); });
 })();
+
+// Short links from our social profiles (/yt, /ig, /tt → ?src=youtube|instagram|tiktok, see .htaccess): every
+// Google Play link on the page gets that source as its install referrer, so Play Console can tell which platform
+// brought an install. Nothing is stored about the visitor beyond this tab's session.
+(function () {
+  var allowed = { youtube: 1, instagram: 1, tiktok: 1 };
+  var src = null;
+  try {
+    src = new URLSearchParams(location.search).get('src') || sessionStorage.getItem('src');
+    if (src && allowed[src]) sessionStorage.setItem('src', src);
+  } catch (e) {}
+  if (!src || !allowed[src]) return;
+  document.querySelectorAll('a[href*="play.google.com/store/apps/details"]').forEach(function (a) {
+    try {
+      var url = new URL(a.href);
+      var app = (url.searchParams.get('id') || '').split('.').pop();
+      url.searchParams.set('referrer', 'utm_source=' + src + '&utm_medium=social&utm_campaign=' + app);
+      a.href = url.toString();
+    } catch (e) {}
+  });
+})();
