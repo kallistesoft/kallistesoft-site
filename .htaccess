@@ -9,6 +9,12 @@ RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\.kallistesoft\.ca$ [NC]
 RewriteRule ^ https://kallistesoft.ca%{REQUEST_URI} [R=301,L]
 
+# Short links for the social profiles: the games section, with the platform as the source (assets/site.js then
+# tags every Google Play link with it).
+RewriteRule ^yt/?$ /en/?src=youtube#games [R=302,NE,L]
+RewriteRule ^ig/?$ /en/?src=instagram#games [R=302,NE,L]
+RewriteRule ^tt/?$ /en/?src=tiktok#games [R=302,NE,L]
+
 # The home page opens in the browser's language: French stays at /, anything
 # else goes to /en/. The FR/EN links store the visitor's choice in a lang cookie
 # (assets/site.js), which wins. No Accept-Language (crawlers) stays at /.

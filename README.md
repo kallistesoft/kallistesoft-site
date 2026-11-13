@@ -10,3 +10,4 @@ Static site for Kallistesoft, hosted on the GoDaddy web hosting at https://kalli
 - Home page: a game released on a store gets a card in the Jeux section (`#jeux` ↔ `#games`). The others stay in the Labo strip under Réalisations until they ship.
 - `sitemap.xml` lists every indexable page. Add a new page there; redirect and `noindex` pages stay out.
 - Preview locally: `python3 -m http.server` and open http://localhost:8000.
+- Short links for the social profiles: `/yt`, `/ig`, `/tt` redirect to `/en/?src=<platform>#games` (`.htaccess`); `site.js` then adds that platform as the install referrer on every Google Play link, so Play Console shows installs per platform.
