@@ -25,6 +25,23 @@ RewriteCond %{HTTP:Accept-Language} !^$
 RewriteCond %{HTTP:Accept-Language} !^fr [NC]
 RewriteRule ^$ /en/ [R=302,L]
 
+# Mathnut links to /mathnut/privacy and /mathnut/terms, one URL for both languages: French browsers get
+# the French page, everyone else (and crawlers) the English one; the lang cookie (FR/EN links) wins. Its
+# first builds, as "Jardin des maths", linked to /jardin-des-maths/…, which now lands on the same pages.
+# mathnut/privacy/ and mathnut/terms/ hold a small fallback page in case these rules don't run.
+RewriteRule ^jardin-des-maths/(privacy|terms)/?$ /mathnut/$1/ [R=301,L]
+RewriteRule ^jardin-des-maths/?$ /mathnut/ [R=301,L]
+RewriteCond %{HTTP_COOKIE} (^|;\s*)lang=fr(;|$) [OR]
+RewriteCond %{HTTP:Accept-Language} ^fr [NC]
+RewriteCond %{HTTP_COOKIE} !(^|;\s*)lang=en(;|$)
+RewriteRule ^mathnut/privacy/?$ /confidentialite/mathnut/ [R=302,L]
+RewriteRule ^mathnut/privacy/?$ /en/privacy/mathnut/ [R=302,L]
+RewriteCond %{HTTP_COOKIE} (^|;\s*)lang=fr(;|$) [OR]
+RewriteCond %{HTTP:Accept-Language} ^fr [NC]
+RewriteCond %{HTTP_COOKIE} !(^|;\s*)lang=en(;|$)
+RewriteRule ^mathnut/terms/?$ /conditions/mathnut/ [R=302,L]
+RewriteRule ^mathnut/terms/?$ /en/terms/mathnut/ [R=302,L]
+
 # Neon Breaker was renamed Brick Shatter: Neon Breaker.
 RewriteRule ^(en/)?neon-breaker(/.*)?$ https://kallistesoft.ca/$1brick-shatter/ [R=301,L]
 
