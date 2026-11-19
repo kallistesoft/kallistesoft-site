@@ -59,3 +59,8 @@ RewriteRule ^(en/)?neon-breaker(/.*)?$ https://kallistesoft.ca/$1brick-shatter/ 
     Header set Cache-Control "public, max-age=2592000"
   </FilesMatch>
 </IfModule>
+
+# stats-lib.php is only included by hit.php and stats.php.
+<Files "stats-lib.php">
+  Require all denied
+</Files>

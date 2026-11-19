@@ -11,3 +11,12 @@ Static site for Kallistesoft, hosted on the GoDaddy web hosting at https://kalli
 - `sitemap.xml` lists every indexable page. Add a new page there; redirect and `noindex` pages stay out.
 - Preview locally: `python3 -m http.server` and open http://localhost:8000.
 - Short links for the social profiles: `/yt`, `/ig`, `/tt` redirect to `/en/?src=<platform>#games` (`.htaccess`); `site.js` then adds that platform as the install referrer on every Google Play link, so Play Console shows installs per platform.
+
+## Anonymous stats for the free web tools
+
+`hit.php` receives the events sent by `js/track.js` on cnp.kallistesoft.ca and
+quiz.kallistesoft.ca (no IP, no cookie, no identifier) and appends them to
+`~/kallistesoft-stats/<site>/<date>.jsonl` on the hosting, outside every web root.
+`stats.php` serves them to `node tools/stats.mjs [quiz|cnp] [days]`, which needs
+the read key in `~/.config/kallistesoft/stats.key` (`stats.php` holds its SHA-256).
+`tools/` is not deployed.
