@@ -16,7 +16,7 @@ jobs:
       # Plain HTML, no build step: copy the site without repo-only files.
       - run: |
           mkdir site
-          rsync -a --exclude site --exclude .git --exclude .github --exclude README.md \
+          rsync -a --exclude site --exclude .git --exclude .github --exclude README.md --exclude tools \
             --exclude CNAME --exclude .nojekyll ./ site/
       - uses: actions/upload-artifact@v4
         with:
