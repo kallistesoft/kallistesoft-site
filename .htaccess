@@ -42,6 +42,20 @@ RewriteCond %{HTTP_COOKIE} !(^|;\s*)lang=en(;|$)
 RewriteRule ^mathnut/terms/?$ /conditions/mathnut/ [R=302,L]
 RewriteRule ^mathnut/terms/?$ /en/terms/mathnut/ [R=302,L]
 
+# CanImmiKit links to /canimmikit/privacy and /canimmikit/terms (lib/services/store_links.dart), one URL for both
+# languages, redirected by language exactly like Mathnut above. canimmikit/privacy/ and canimmikit/terms/ hold the
+# fallback page.
+RewriteCond %{HTTP_COOKIE} (^|;\s*)lang=fr(;|$) [OR]
+RewriteCond %{HTTP:Accept-Language} ^fr [NC]
+RewriteCond %{HTTP_COOKIE} !(^|;\s*)lang=en(;|$)
+RewriteRule ^canimmikit/privacy/?$ /confidentialite/canimmikit/ [R=302,L]
+RewriteRule ^canimmikit/privacy/?$ /en/privacy/canimmikit/ [R=302,L]
+RewriteCond %{HTTP_COOKIE} (^|;\s*)lang=fr(;|$) [OR]
+RewriteCond %{HTTP:Accept-Language} ^fr [NC]
+RewriteCond %{HTTP_COOKIE} !(^|;\s*)lang=en(;|$)
+RewriteRule ^canimmikit/terms/?$ /conditions/canimmikit/ [R=302,L]
+RewriteRule ^canimmikit/terms/?$ /en/terms/canimmikit/ [R=302,L]
+
 # Neon Breaker was renamed Brick Shatter: Neon Breaker.
 RewriteRule ^(en/)?neon-breaker(/.*)?$ https://kallistesoft.ca/$1brick-shatter/ [R=301,L]
 
