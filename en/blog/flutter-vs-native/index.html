@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flutter vs native (Swift/Kotlin): how to choose in 2026 — Kallistesoft</title>
+<meta name="description" content="Flutter, Swift or Kotlin? Team, performance, platform APIs, hiring and cost: a senior developer's criteria and a decision checklist for 2026.">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" hreflang="fr-CA" href="https://kallistesoft.ca/blog/flutter-ou-natif/">
+<link rel="alternate" hreflang="en-CA" href="https://kallistesoft.ca/en/blog/flutter-vs-native/">
+<link rel="canonical" href="https://kallistesoft.ca/en/blog/flutter-vs-native/">
+<meta property="og:title" content="Flutter vs native (Swift/Kotlin): how to choose in 2026">
+<meta property="og:description" content="Concrete criteria for choosing between Flutter and native.">
+<meta property="og:url" content="https://kallistesoft.ca/en/blog/flutter-vs-native/">
+<meta name="theme-color" content="#060d24" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f8fc" media="(prefers-color-scheme: light)">
+<script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=20261128">
+<script src="/assets/site.js?v=20261113" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Flutter vs native (Swift/Kotlin): how to choose in 2026", "datePublished": "2026-11-28", "inLanguage": "en-CA", "author": {"@type": "Organization", "name": "Kallistesoft"}, "publisher": {"@type": "Organization", "name": "Kallistesoft"}, "mainEntityOfPage": "https://kallistesoft.ca/en/blog/flutter-vs-native/"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/en/" aria-label="Kallistesoft, home"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#2f6bff"/><path d="M11 14V34M23 14 11 25.5M15 21.5 24 34M37 16.5C35.6 14.7 34 14 32.2 14 29.7 14 28 15.6 28 17.7 28 22.6 37 20.8 37 27.6 37 31.6 34.8 34 31.8 34 29.8 34 28.2 33.1 27 31.4" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>kalliste<span>soft</span></span></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="hide-sm" href="/en/#services">Services</a>
+      <a class="hide-sm" href="/en/#work">Work</a>
+      <a class="hide-sm" href="/en/#games">Games</a>
+      <a class="hide-sm" href="/en/#approach">Approach</a>
+      <a class="hide-sm" href="/en/team-audit/">Teams</a>
+      <a class="hide-sm" href="/en/blog/">Blog</a>
+      <a class="lang" href="/blog/flutter-ou-natif/" hreflang="fr" lang="fr">FR</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Change theme" data-to-light="Switch to light theme" data-to-dark="Switch to dark theme"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></button>
+    <a class="btn btn-primary btn-sm" href="/en/#contact">Contact</a>
+  </div>
+</header>
+
+<main class="legal">
+<h1>Flutter vs native (Swift/Kotlin): how to choose in 2026</h1>
+<p class="updated">By <a href="/en/about/">Kallistesoft</a> · <time datetime="2026-11-28">November 28, 2026</time> · 3 min read</p>
+
+<figure>
+<svg viewBox="0 0 640 160" style="width:100%;height:auto" role="img" aria-label="Two native apps versus a single Flutter codebase"><title>Two native apps versus a single Flutter codebase</title>
+<rect x="1" y="1" width="638" height="158" rx="14" fill="none" stroke="currentColor" stroke-opacity=".25" stroke-width="2"/>
+<rect x="90" y="30" width="60" height="100" rx="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="120" cy="118" r="4" fill="currentColor"/><rect x="190" y="30" width="60" height="100" rx="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="220" cy="118" r="4" fill="currentColor"/><rect x="330" y="40" width="80" height="80" rx="12" fill="#2f6bff" fill-opacity=".15" stroke="#2f6bff" stroke-width="3"/><path d="M260 80h60M310 70l10 10-10 10" stroke="#2f6bff" stroke-width="3" fill="none"/><g fill="currentColor" font-family="sans-serif" font-size="13" text-anchor="middle"><text x="370" y="85">1 code</text><text x="370" y="150">Flutter</text><text x="170" y="150">Swift + Kotlin</text></g></svg>
+<figcaption>Two native apps versus a single Flutter codebase.</figcaption>
+</figure>
+
+<p>For ten years I've shipped apps to Google Play and the App Store in Swift, Kotlin, Unity and, lately, mostly Flutter. "Flutter or native?" comes up on every project. Here are the criteria I actually use.</p>
+
+<h2>What changes in practice</h2>
+<p>Native means two codebases: Swift (<a href="https://developer.apple.com/xcode/swiftui/" target="_blank" rel="noopener">SwiftUI</a>) for iOS and Kotlin (<a href="https://developer.android.com/develop/ui/compose" target="_blank" rel="noopener">Jetpack Compose</a>) for Android. Flutter is one Dart codebase that draws its own components. The UI is identical and smooth everywhere, but it doesn't automatically pick up every new iOS or Android visual change.</p>
+
+<h2>1. The team first</h2>
+<p>A solo developer or a team of two to four who must cover iOS and Android almost always benefits from Flutter: a feature is written and tested once. If you already have solid iOS and Android teams, forcing Dart on them to "save money" rarely pays off. Pick the technology your team can maintain three years from now.</p>
+
+<h2>2. Performance</h2>
+<p>For content screens, forms, lists and payments, Flutter is fast enough as long as you follow its <a href="https://docs.flutter.dev/perf/best-practices" target="_blank" rel="noopener">performance best practices</a>: lazy lists, properly sized images, few rebuilds. Native keeps the edge for real-time processing (camera, audio, video) and animations tightly bound to the system. For a 3D game, look at Unity instead.</p>
+
+<h2>3. Platform APIs</h2>
+<p>This is the most underrated criterion. Flutter covers the everyday needs through plugins, but a recent or specialized feature means depending on a third-party plugin or writing native code through <a href="https://docs.flutter.dev/platform-integration/platform-channels" target="_blank" rel="noopener">platform channels</a>:</p>
+<pre><code>const channel = MethodChannel('com.example.app/battery');
+final level = await channel.invokeMethod&lt;int&gt;('level');</code></pre>
+<p>You then write the Kotlin and Swift sides too. If you expect many of these (home-screen widgets, Live Activities, advanced Bluetooth, CarPlay), native is simpler.</p>
+
+<h2>4. Hiring and cost</h2>
+<p>Swift and Kotlin developers are more plentiful, but a good mobile developer picks up Dart in a few weeks. I won't quote a savings percentage; it depends too much on the project. Flutter cuts the work on shared logic and UI; it doesn't remove publishing to two stores or yearly platform upgrades.</p>
+
+<figure>
+<svg viewBox="0 0 640 260" style="width:100%;height:auto" role="img" aria-labelledby="dt"><title id="dt">Simplified decision tree: Flutter or native</title>
+<g fill="none" stroke="currentColor" stroke-width="1.6"><rect x="220" y="8" width="200" height="40" rx="8"/><rect x="20" y="100" width="190" height="44" rx="8"/><rect x="225" y="100" width="190" height="44" rx="8"/><rect x="430" y="100" width="190" height="44" rx="8"/></g>
+<g fill="none" stroke="#2f6bff" stroke-width="3"><rect x="20" y="200" width="190" height="42" rx="8"/><rect x="225" y="200" width="190" height="42" rx="8"/><rect x="430" y="200" width="190" height="42" rx="8"/></g>
+<g stroke="#2f6bff" stroke-width="2" fill="none"><path d="M280 48L115 100M320 48v52M360 48L525 100M115 144v56M320 144v56M525 144v56"/></g>
+<g fill="currentColor" font-family="sans-serif" font-size="13" text-anchor="middle"><text x="320" y="33">Your project</text><text x="115" y="127">iOS + Android, small team</text><text x="320" y="127">Native teams in place</text><text x="525" y="127">Real-time, cutting-edge APIs</text><text x="115" y="226">Flutter</text><text x="320" y="226">Native</text><text x="525" y="226">Native</text></g></svg>
+<figcaption>A simplified decision tree. When in doubt, prototype the riskiest feature.</figcaption>
+</figure>
+
+<h2>When each option wins</h2>
+<table>
+<thead><tr><th>Situation</th><th>Usual choice</th></tr></thead>
+<tbody>
+<tr><td>Small team, iOS and Android, custom UI</td><td>Flutter</td></tr>
+<tr><td>Proof of concept on two platforms</td><td>Flutter</td></tr>
+<tr><td>iOS only, deep Apple integration</td><td>Swift / SwiftUI</td></tr>
+<tr><td>Real-time camera, audio or sensors</td><td>Native</td></tr>
+<tr><td>Native teams already in place</td><td>Native</td></tr>
+<tr><td>2D or 3D game</td><td>Unity</td></tr>
+</tbody>
+</table>
+<p><strong>Classic pitfall:</strong> choosing Flutter to maintain one codebase, then piling on native modules. You end up with three codebases. Before adding a plugin, check its last commit date and whether it supports both platforms.</p>
+
+<h2>Conclusion</h2>
+<p>There is no universal winner. For most small teams targeting iOS and Android on a limited budget, Flutter is a good default. If the product is deeply tied to the platform or your native teams exist, stay native. Settle it with a one-week prototype of the riskiest feature, not the home screen.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://docs.flutter.dev/platform-integration/platform-channels" target="_blank" rel="noopener">Flutter: platform channels</a></li>
+<li><a href="https://docs.flutter.dev/perf/best-practices" target="_blank" rel="noopener">Flutter: performance best practices</a></li>
+<li><a href="https://developer.android.com/develop/ui/compose" target="_blank" rel="noopener">Android: Jetpack Compose</a></li>
+<li><a href="https://developer.apple.com/xcode/swiftui/" target="_blank" rel="noopener">Apple: SwiftUI</a></li>
+</ul>
+
+<h2>Related reading</h2>
+<ul>
+<li><a href="/en/blog/ci-cd-small-team/">CI/CD for a small team</a></li>
+<li><a href="/en/blog/ai-coding-assistant/">Using an AI coding assistant</a></li>
+<li><a href="/en/blog/">Back to the blog</a></li>
+</ul>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 KallisteSoft inc. · <a href="tel:+14389239562">438-923-9562</a></span>
+    <nav>
+      <a href="/en/brick-shatter/">Brick Shatter</a>
+      <a href="/en/block-daily/">Block Daily</a>
+      <a href="/en/unarrow/">Unarrow</a>
+      <a href="/en/void-raid/">Void Raid</a>
+      <a href="/en/neon-pop/">Neon Pop</a>
+      <a href="/en/neon-snake/">Neon Snake</a>
+      <a href="/en/neon-stack/">Neon Stack</a>
+      <a href="/en/team-audit/">Team audit</a>
+      <a href="/en/privacy/">Privacy</a>
+      <a href="/en/about/">About</a>
+      <a href="https://www.instagram.com/kallistesoft/" rel="noopener" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@kallistesoft" rel="noopener" target="_blank">TikTok</a>
+      <a href="mailto:contact@kallistesoft.ca">Contact</a>
+      <a href="/" hreflang="fr">Français</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

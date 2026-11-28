@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Utiliser un assistant IA de programmation sans perdre le contrôle — Kallistesoft</title>
+<meta name="description" content="Où un assistant IA aide vraiment, où il se trompe, comment relire son code, protéger vos secrets et rédiger une politique d'équipe claire.">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" hreflang="fr-CA" href="https://kallistesoft.ca/blog/ia-assistant-programmation/">
+<link rel="alternate" hreflang="en-CA" href="https://kallistesoft.ca/en/blog/ai-coding-assistant/">
+<link rel="canonical" href="https://kallistesoft.ca/blog/ia-assistant-programmation/">
+<meta property="og:title" content="Utiliser un assistant IA de programmation sans perdre le contrôle">
+<meta property="og:description" content="Bonnes pratiques et modèle de politique d'équipe pour programmer avec une IA.">
+<meta property="og:url" content="https://kallistesoft.ca/blog/ia-assistant-programmation/">
+<meta name="theme-color" content="#060d24" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f8fc" media="(prefers-color-scheme: light)">
+<script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=20261128">
+<script src="/assets/site.js?v=20261113" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Utiliser un assistant IA de programmation sans perdre le contrôle","datePublished":"2026-11-28","author":{"@type":"Organization","name":"Kallistesoft","url":"https://kallistesoft.ca/"},"publisher":{"@type":"Organization","name":"Kallistesoft"},"inLanguage":"fr-CA","mainEntityOfPage":"https://kallistesoft.ca/blog/ia-assistant-programmation/"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Kallistesoft, accueil"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#2f6bff"/><path d="M11 14V34M23 14 11 25.5M15 21.5 24 34M37 16.5C35.6 14.7 34 14 32.2 14 29.7 14 28 15.6 28 17.7 28 22.6 37 20.8 37 27.6 37 31.6 34.8 34 31.8 34 29.8 34 28.2 33.1 27 31.4" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>kalliste<span>soft</span></span></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="hide-sm" href="/#services">Services</a>
+      <a class="hide-sm" href="/#realisations">Réalisations</a>
+      <a class="hide-sm" href="/#jeux">Jeux</a>
+      <a class="hide-sm" href="/#approche">Approche</a>
+      <a class="hide-sm" href="/audit-equipe/">Équipes</a>
+      <a class="hide-sm" href="/blog/">Blog</a>
+      <a class="lang" href="/en/blog/ai-coding-assistant/" hreflang="en" lang="en">EN</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Changer de thème" data-to-light="Passer au thème clair" data-to-dark="Passer au thème sombre"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></button>
+    <a class="btn btn-primary btn-sm" href="/#contact">Contact</a>
+  </div>
+</header>
+
+<main class="legal">
+<h1>Utiliser un assistant IA de programmation sans perdre le contrôle</h1>
+<p class="updated">Par <a href="/a-propos/">Kallistesoft</a> · <time datetime="2026-11-28">28 novembre 2026</time> · Lecture : 3 min</p>
+<figure style="margin:1.5rem 0"><svg viewBox="0 0 400 220" style="width:100%;height:auto;max-height:240px" role="img" aria-label="Illustration : un assistant IA et un développeur qui relit le code ensemble"><title>Illustration : un assistant IA et un développeur qui relit le code ensemble</title><path d="M150 70 112 110 150 150M250 70 288 110 250 150" fill="none" stroke="#2f6bff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/><circle cx="200" cy="110" r="22" fill="#2f6bff"/><path d="M200 60v20M200 140v20M165 110h-10M245 110h-10" stroke="currentColor" stroke-width="4" stroke-linecap="round"/><circle cx="200" cy="52" r="6" fill="currentColor"/><circle cx="200" cy="168" r="6" fill="currentColor"/></svg><figcaption>Illustration : un assistant IA et un développeur qui relit le code ensemble</figcaption></figure>
+
+<p>Nous utilisons des assistants IA de programmation tous les jours, sur nos applications comme chez nos clients. Leur gain de vitesse est réel, mais ils ne remplacent ni le jugement ni la responsabilité : le code généré reste <em>votre</em> code.</p>
+
+<h2>Là où il aide, là où il se trompe</h2>
+<p>Il excelle quand le résultat est facile à vérifier : code répétitif (modèles, sérialisation, formulaires), tests de cas limites, refactorisations mécaniques, et exploration d'un code inconnu (« où est gérée l'expiration de la session ? »).</p>
+<p>Ses erreurs sont rarement spectaculaires, elles sont plausibles : API ou méthodes inventées, requêtes SQL concaténées (voir l'<a href="https://owasp.org/www-project-top-ten/" target="_blank" rel="noopener">OWASP Top 10</a>), validation côté client seulement, dépendances ajoutées pour dix lignes de code, tests qui répètent l'implémentation au lieu de la vérifier. Il ignore aussi vos conventions et la raison d'être d'un contournement étrange laissé là il y a trois ans. Concurrence, performance sur un appareil modeste et architecture d'ensemble demandent toujours un humain.</p>
+
+<h2>Relire comme le code d'un nouveau collègue</h2>
+<p>Règle d'or : ne fusionnez jamais ce que vous ne pouvez pas expliquer.</p>
+<ol>
+<li>Lisez le diff en entier, pas le résumé de l'assistant.</li>
+<li>Cherchez ce qui manque : erreurs gérées, cas limites, libération des ressources.</li>
+<li>Vérifiez chaque nouvelle dépendance (nom exact, licence, entretien).</li>
+<li>Exécutez le code : ce qui compile ne fonctionne pas forcément.</li>
+</ol>
+
+<figure style="margin:1.5rem 0"><svg viewBox="0 0 400 160" style="width:100%;height:auto" role="img" aria-label="Le cycle que nous suivons : chaque étape générée passe par une relecture et des tests avant la fusion."><title>Le cycle que nous suivons : chaque étape générée passe par une relecture et des tests avant la fusion.</title><rect x="13" y="40" width="62" height="56" rx="8" fill="none" stroke="#2f6bff" stroke-width="2.5"/><text x="44" y="64" text-anchor="middle" font-size="11" font-weight="600" fill="currentColor">Petite</text><text x="44" y="79" text-anchor="middle" font-size="11" font-weight="600" fill="currentColor">demande</text><path d="M76 68h7" stroke="currentColor" stroke-width="2"/><rect x="89" y="40" width="62" height="56" rx="8" fill="none" stroke="#2f6bff" stroke-width="2.5"/><text x="120" y="64" text-anchor="middle" font-size="11" font-weight="600" fill="currentColor">Code</text><text x="120" y="79" text-anchor="middle" font-size="11" font-weight="600" fill="currentColor">généré</text><path d="M152 68h7" stroke="currentColor" stroke-width="2"/><rect x="165" y="40" width="62" height="56" rx="8" fill="none" stroke="#2f6bff" stroke-width="2.5"/><text x="196" y="64" text-anchor="middle" font-size="11" font-weight="600" fill="currentColor">Relecture</text><text x="196" y="79" text-anchor="middle" font-size="11" font-weight="600" fill="currentColor">humaine</text><path d="M228 68h7" stroke="currentColor" stroke-width="2"/><rect x="241" y="40" width="62" height="56" rx="8" fill="none" stroke="#2f6bff" stroke-width="2.5"/><text x="272" y="64" text-anchor="middle" font-size="11" font-weight="600" fill="currentColor">Tests</text><text x="272" y="79" text-anchor="middle" font-size="11" font-weight="600" fill="currentColor">et CI</text><path d="M304 68h7" stroke="currentColor" stroke-width="2"/><rect x="317" y="40" width="62" height="56" rx="8" fill="#2f6bff" stroke="#2f6bff" stroke-width="2.5"/><text x="348" y="64" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Fusion</text><path d="M200 100v26h-114v-26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-dasharray="4 4"/><text x="132" y="144" text-anchor="middle" font-size="11" fill="currentColor">On recommence si ça échoue</text></svg><figcaption>Le cycle que nous suivons : chaque étape générée passe par une relecture et des tests avant la fusion.</figcaption></figure>
+<h2>Garder les tests au vert, les demandes petites</h2>
+<p>Écrivez les tests avant la modification, et ne laissez jamais l'assistant « corriger » un test qui échoue sans comprendre pourquoi : adapter le test au bogue est la pente la plus glissante. Rien ne se fusionne si l'intégration continue est rouge.</p>
+<p>Un assistant produit mille lignes en cinq minutes, mais personne ne les relit sérieusement. Une intention par demande de fusion, quelques centaines de lignes au plus, un commit par étape saine : si ça dérape, vous revenez en arrière sans tout jeter.</p>
+
+<h2>Secrets et vie privée</h2>
+<p>Tout ce que vous envoyez peut quitter votre poste. Ne collez jamais de clés, de mots de passe ni de fichiers <code>.env</code> (si c'est arrivé, changez le secret). Utilisez des données fictives, jamais celles de clients. Lisez les conditions de l'outil : conservation, entraînement des modèles. Vérifiez vos contrats : certains clients interdisent d'envoyer leur code à un tiers. Utilisez un outil de détection de secrets (<a href="https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning" target="_blank" rel="noopener">GitHub en offre un</a>) avant chaque commit (<a href="https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning" target="_blank" rel="noopener">GitHub en offre un</a>).</p>
+
+<h2>Un contexte qui donne de bons résultats</h2>
+<ul>
+<li>Un objectif précis : « ajoute la validation du courriel dans <code>SignupForm</code> et un test pour les cas vides et invalides », pas « améliore le formulaire ».</li>
+<li>Les contraintes explicites : version du langage, bibliothèques permises, « ne touche pas à l'API publique ».</li>
+<li>Un exemple existant du projet et un fichier de conventions à la racine (commandes de build et de test, interdits).</li>
+<li>Planifier d'abord, puis implémenter. Et recommencer avec un contexte propre quand la conversation s'embrouille.</li>
+</ul>
+
+<h2>Modèle de politique d'équipe</h2>
+<table>
+<thead><tr><th>Sujet</th><th>Règle</th></tr></thead>
+<tbody>
+<tr><td>Responsabilité</td><td>L'auteur de la demande répond du code, écrit ou généré.</td></tr>
+<tr><td>Outils</td><td>Liste approuvée, forfaits professionnels seulement pour le code client.</td></tr>
+<tr><td>Données interdites</td><td>Secrets, données personnelles, code sous confidentialité non autorisé.</td></tr>
+<tr><td>Revue</td><td>Relue par une autre personne, diff complet.</td></tr>
+<tr><td>Tests</td><td>Ajoutés ou mis à jour, intégration continue verte.</td></tr>
+<tr><td>Dépendances</td><td>Chaque nouvelle bibliothèque est justifiée.</td></tr>
+</tbody>
+</table>
+
+<h2>Conclusion</h2>
+<p>Un assistant IA est un excellent accélérateur pour qui sait déjà ce qu'il veut. Gardez les tâches petites, les tests exigeants et la revue intacte : les meilleures équipes ne génèrent pas le plus de code, elles comprennent tout ce qu'elles livrent.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning" target="_blank" rel="noopener">GitHub — À propos de l'analyse des secrets</a></li>
+<li><a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/getting-started/helping-others-review-your-changes" target="_blank" rel="noopener">GitHub — Faciliter la revue de vos demandes de fusion</a></li>
+<li><a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/" target="_blank" rel="noopener">OWASP — Top 10 pour les applications LLM</a></li>
+</ul>
+
+<h2>À lire aussi</h2>
+<ul>
+<li><a href="/blog/ci-cd-petite-equipe/">CI/CD pour une petite équipe</a></li>
+<li><a href="/blog/flutter-ou-natif/">Flutter ou natif : comment choisir</a></li>
+<li><a href="/blog/">Tous les articles du blogue</a></li>
+</ul>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 KallisteSoft inc. · <a href="tel:+14389239562">438-923-9562</a></span>
+    <nav>
+      <a href="/brick-shatter/">Brick Shatter</a>
+      <a href="/block-daily/">Block Daily</a>
+      <a href="/unarrow/">Unarrow</a>
+      <a href="/void-raid/">Void Raid</a>
+      <a href="/neon-pop/">Neon Pop</a>
+      <a href="/neon-snake/">Neon Snake</a>
+      <a href="/neon-stack/">Neon Stack</a>
+      <a href="/audit-equipe/">Audit d'équipe</a>
+      <a href="/confidentialite/">Confidentialité</a>
+      <a href="/a-propos/">À propos</a>
+      <a href="https://www.instagram.com/kallistesoft/" rel="noopener" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@kallistesoft" rel="noopener" target="_blank">TikTok</a>
+      <a href="mailto:contact@kallistesoft.ca">Contact</a>
+      <a href="/en/" hreflang="en">English</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

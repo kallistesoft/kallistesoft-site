@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Créer un site web rapide et accessible — Kallistesoft</title>
+<meta name="description" content="Guide pratique : HTML statique ou framework, Core Web Vitals (LCP, INP, CLS), images, polices, cache, contraste, clavier et liste de vérification.">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="canonical" href="https://kallistesoft.ca/blog/site-web-rapide-accessible/">
+<link rel="alternate" hreflang="fr-CA" href="https://kallistesoft.ca/blog/site-web-rapide-accessible/">
+<link rel="alternate" hreflang="en-CA" href="https://kallistesoft.ca/en/blog/fast-accessible-website/">
+<meta property="og:title" content="Un site rapide et accessible : le guide pratique">
+<meta property="og:description" content="Guide pratique : HTML statique ou framework, Core Web Vitals (LCP, INP, CLS), images, polices, cache, contraste, clavier et liste de vérification.">
+<meta property="og:url" content="https://kallistesoft.ca/blog/site-web-rapide-accessible/">
+<meta name="theme-color" content="#060d24" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f8fc" media="(prefers-color-scheme: light)">
+<script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=20261128">
+<script src="/assets/site.js?v=20261113" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Créer un site web rapide et accessible","datePublished":"2026-11-28","inLanguage":"fr-CA","author":{"@type":"Organization","name":"Kallistesoft","url":"https://kallistesoft.ca/"},"publisher":{"@type":"Organization","name":"Kallistesoft"},"mainEntityOfPage":"https://kallistesoft.ca/blog/site-web-rapide-accessible/"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Kallistesoft, accueil"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#2f6bff"/><path d="M11 14V34M23 14 11 25.5M15 21.5 24 34M37 16.5C35.6 14.7 34 14 32.2 14 29.7 14 28 15.6 28 17.7 28 22.6 37 20.8 37 27.6 37 31.6 34.8 34 31.8 34 29.8 34 28.2 33.1 27 31.4" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>kalliste<span>soft</span></span></a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a class="hide-sm" href="/#services">Services</a>
+      <a class="hide-sm" href="/#realisations">Réalisations</a>
+      <a class="hide-sm" href="/#jeux">Jeux</a>
+      <a class="hide-sm" href="/#approche">Approche</a>
+      <a class="hide-sm" href="/audit-equipe/">Équipes</a>
+      <a class="hide-sm" href="/blog/">Blog</a>
+      <a class="lang" href="/en/blog/fast-accessible-website/" hreflang="en" lang="en">EN</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Changer de thème" data-to-light="Passer au thème clair" data-to-dark="Passer au thème sombre"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></button>
+    <a class="btn btn-primary btn-sm" href="/#contact">Contact</a>
+  </div>
+</header>
+
+<main class="legal">
+<h1>Créer un site web rapide et accessible</h1>
+<p class="updated">Par <a href="/a-propos/">Kallistesoft</a> · <time datetime="2026-11-28">28 novembre 2026</time> · Lecture : 3 min</p>
+
+<p>Un site rapide et accessible relève surtout de bons choix au départ. Après dix ans à livrer des sites et des applications, dont ce site-ci en HTML statique, je vois toujours les mêmes erreurs : trop de JavaScript, des images énormes, des contrastes faibles, un clavier oublié.</p>
+<figure style="margin:1.5rem 0"><svg viewBox="0 0 590 90" style="width:100%;height:auto" role="img" aria-label="Seuils bons des Core Web Vitals : LCP 2,5 secondes, INP 200 millisecondes, CLS 0,1" xmlns="http://www.w3.org/2000/svg"><title>Seuils bons des Core Web Vitals : LCP 2,5 secondes, INP 200 millisecondes, CLS 0,1</title><rect x="10" y="10" width="170" height="70" rx="10" fill="none" stroke="#2f6bff" stroke-width="2"/><text x="95.0" y="42.0" text-anchor="middle" font-size="16" font-weight="700" fill="currentColor">LCP</text><text x="95.0" y="62.0" text-anchor="middle" font-size="12" fill="currentColor" opacity=".8">≤ 2,5 s</text><rect x="210" y="10" width="170" height="70" rx="10" fill="none" stroke="#2f6bff" stroke-width="2"/><text x="295.0" y="42.0" text-anchor="middle" font-size="16" font-weight="700" fill="currentColor">INP</text><text x="295.0" y="62.0" text-anchor="middle" font-size="12" fill="currentColor" opacity=".8">≤ 200 ms</text><rect x="410" y="10" width="170" height="70" rx="10" fill="none" stroke="#2f6bff" stroke-width="2"/><text x="495.0" y="42.0" text-anchor="middle" font-size="16" font-weight="700" fill="currentColor">CLS</text><text x="495.0" y="62.0" text-anchor="middle" font-size="12" fill="currentColor" opacity=".8">≤ 0,1</text></svg><figcaption style="font-size:.9em;opacity:.8;margin-top:.5rem">Seuils « bons » des Core Web Vitals : chargement, réactivité et stabilité visuelle.</figcaption></figure>
+<h2>HTML statique ou framework ?</h2>
+<p>Pour un site vitrine ou un blogue, le HTML statique est difficile à battre : le navigateur reçoit une page finie, sans attendre qu'un script la construise. Notre site se déploie par GitHub Actions sur un hébergement ordinaire, avec presque rien à entretenir. Un framework se justifie quand l'état de l'interface est complexe (tableaux de bord, formulaires dynamiques). Même alors, générez le contenu à l'avance et réservez le JavaScript aux zones interactives.</p>
+
+<h2>Les Core Web Vitals</h2>
+<p>Google publie des seuils « bons » pour trois indicateurs (<a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">web.dev</a>) :</p>
+<table>
+<thead><tr><th>Indicateur</th><th>Mesure</th><th>Seuil</th><th>Levier principal</th></tr></thead>
+<tbody>
+<tr><td>LCP</td><td>Affichage du plus gros élément</td><td>2,5 s</td><td>Servir l'image principale tôt, CSS léger</td></tr>
+<tr><td>INP</td><td>Réactivité aux interactions</td><td>200 ms</td><td>Moins de JavaScript, pas de widgets tiers inutiles</td></tr>
+<tr><td>CLS</td><td>Décalages de mise en page</td><td>0,1</td><td>Dimensions d'images déclarées, espace réservé</td></tr>
+</tbody>
+</table>
+
+<p>Pour le LCP, pas de <code>loading="lazy"</code> sur l'image principale. Pour le CLS, déclarez toujours les dimensions :</p>
+<pre><code>&lt;img src="/img/atelier-800.webp" width="800" height="450"
+     alt="Poste de travail avec deux écrans"&gt;</code></pre>
+
+<figure style="margin:1.5rem 0"><svg viewBox="0 0 670 90" style="width:100%;height:auto" role="img" aria-label="Ordre de chargement visé : HTML, CSS, image principale, JavaScript différé" xmlns="http://www.w3.org/2000/svg"><title>Ordre de chargement visé : HTML, CSS, image principale, JavaScript différé</title><rect x="10" y="10" width="140" height="70" rx="10" fill="none" stroke="#2f6bff" stroke-width="2"/><text x="80.0" y="42.0" text-anchor="middle" font-size="16" font-weight="700" fill="currentColor">HTML</text><text x="80.0" y="62.0" text-anchor="middle" font-size="12" fill="currentColor" opacity=".8">page finie</text><path d="M154 45.0h18m-6 -5l6 5l-6 5" fill="none" stroke="#2f6bff" stroke-width="2" stroke-linecap="round"/><rect x="180" y="10" width="140" height="70" rx="10" fill="none" stroke="#2f6bff" stroke-width="2"/><text x="250.0" y="42.0" text-anchor="middle" font-size="16" font-weight="700" fill="currentColor">CSS</text><text x="250.0" y="62.0" text-anchor="middle" font-size="12" fill="currentColor" opacity=".8">léger</text><path d="M324 45.0h18m-6 -5l6 5l-6 5" fill="none" stroke="#2f6bff" stroke-width="2" stroke-linecap="round"/><rect x="350" y="10" width="140" height="70" rx="10" fill="none" stroke="#2f6bff" stroke-width="2"/><text x="420.0" y="42.0" text-anchor="middle" font-size="16" font-weight="700" fill="currentColor">Image LCP</text><text x="420.0" y="62.0" text-anchor="middle" font-size="12" fill="currentColor" opacity=".8">priorité haute</text><path d="M494 45.0h18m-6 -5l6 5l-6 5" fill="none" stroke="#2f6bff" stroke-width="2" stroke-linecap="round"/><rect x="520" y="10" width="140" height="70" rx="10" fill="none" stroke="#2f6bff" stroke-width="2"/><text x="590.0" y="42.0" text-anchor="middle" font-size="16" font-weight="700" fill="currentColor">JS</text><text x="590.0" y="62.0" text-anchor="middle" font-size="12" fill="currentColor" opacity=".8">différé</text></svg><figcaption style="font-size:.9em;opacity:.8;margin-top:.5rem">Ordre de chargement visé : le contenu d'abord, le JavaScript en dernier.</figcaption></figure>
+<h2>Images, polices et cache</h2>
+<ul>
+<li><strong>Images :</strong> WebP ou AVIF pour les photos, SVG pour logos et icônes. Jamais 4000 px dans un espace de 400 px : utilisez <code>srcset</code>.</li>
+<li><strong>Polices :</strong> une seule famille, <code>font-display: swap</code>, ou simplement une pile de polices système, la plus rapide.</li>
+<li><strong>Cache :</strong> les fichiers versionnés (<code>style.css?v=20261108</code>) se cachent longtemps, le HTML se revalide (<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching" target="_blank" rel="noopener">MDN</a>). Activez la compression gzip ou Brotli.</li>
+</ul>
+<pre><code>Cache-Control: public, max-age=31536000, immutable   # fichiers versionnés
+Cache-Control: no-cache                              # pages HTML</code></pre>
+
+<h2>Accessibilité de base</h2>
+<p>Utilisez un HTML sémantique : <code>header</code>, <code>nav</code>, <code>main</code>, une seule <code>h1</code>, des titres dans l'ordre, <code>&lt;button&gt;</code> pour les boutons et <code>&lt;a href&gt;</code> pour les liens. Un <code>&lt;div onclick&gt;</code> n'est ni focalisable ni annoncé par un lecteur d'écran. Déclarez <code>lang</code> et étiquetez chaque champ.</p>
+<p>Les WCAG demandent un contraste d'au moins 4,5:1 pour le texte normal (<a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html" target="_blank" rel="noopener">critère 1.4.3</a>). Le gris pâle sur blanc est le fautif habituel; vérifiez les deux thèmes si vous offrez un mode sombre. Le texte alternatif décrit la fonction de l'image en une phrase; une image décorative reçoit <code>alt=""</code>. Au clavier, ne supprimez jamais le focus sans le remplacer :</p>
+<pre><code>:focus-visible { outline: 3px solid #2f6bff; outline-offset: 2px; }</code></pre>
+
+<h2>Comment tester</h2>
+<ul>
+<li><strong>Lighthouse</strong> (outils de Chrome), en mode mobile : fiez-vous aux tendances, pas à un score isolé.</li>
+<li><strong>axe</strong> : détecte contrastes, étiquettes manquantes, ARIA invalide, mais seulement une partie des problèmes.</li>
+<li><strong>Clavier seul :</strong> Tab, Maj+Tab, Entrée, Espace. Pouvez-vous tout faire en voyant où vous êtes?</li>
+<li><strong>Lecteur d'écran :</strong> dix minutes avec VoiceOver ou TalkBack sur vos pages clés.</li>
+</ul>
+
+<h2>Liste de vérification</h2>
+<ul>
+<li>Une h1, <code>lang</code> déclaré, titres dans l'ordre.</li>
+<li>Images modernes, avec dimensions et <code>alt</code>.</li>
+<li>Cache long sur les fichiers versionnés, compression active.</li>
+<li>Contraste 4,5:1, focus visible, tout utilisable au clavier.</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>Performance et accessibilité s'obtiennent avec les mêmes réflexes : moins de code, du HTML correct, des images raisonnables. Appliquez la liste à votre page la plus visitée, mesurez, puis recommencez.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://web.dev/articles/vitals" target="_blank" rel="noopener">Web Vitals — web.dev</a></li>
+<li><a href="https://web.dev/articles/lcp" target="_blank" rel="noopener">Largest Contentful Paint — web.dev</a></li>
+<li><a href="https://web.dev/articles/cls" target="_blank" rel="noopener">Cumulative Layout Shift — web.dev</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching" target="_blank" rel="noopener">HTTP caching — MDN</a></li>
+<li><a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html" target="_blank" rel="noopener">Contrast (Minimum) — W3C WAI</a></li>
+</ul>
+
+<h2>À lire aussi</h2>
+<ul>
+<li><a href="/blog/flutter-ou-natif/">Flutter ou natif : comment choisir</a></li>
+<li><a href="/blog/publier-premiere-app-mobile/">Publier sa première application mobile</a></li>
+<li><a href="/blog/">Retour au blogue</a></li>
+</ul>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 KallisteSoft inc. · <a href="tel:+14389239562">438-923-9562</a></span>
+    <nav>
+      <a href="/brick-shatter/">Brick Shatter</a>
+      <a href="/block-daily/">Block Daily</a>
+      <a href="/unarrow/">Unarrow</a>
+      <a href="/void-raid/">Void Raid</a>
+      <a href="/neon-pop/">Neon Pop</a>
+      <a href="/neon-snake/">Neon Snake</a>
+      <a href="/neon-stack/">Neon Stack</a>
+      <a href="/audit-equipe/">Audit d'équipe</a>
+      <a href="/confidentialite/">Confidentialité</a>
+      <a href="/a-propos/">À propos</a>
+      <a href="https://www.instagram.com/kallistesoft/" rel="noopener" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@kallistesoft" rel="noopener" target="_blank">TikTok</a>
+      <a href="mailto:contact@kallistesoft.ca">Contact</a>
+      <a href="/en/" hreflang="en">English</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
