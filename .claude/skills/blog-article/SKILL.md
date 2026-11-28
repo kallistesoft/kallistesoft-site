@@ -22,7 +22,7 @@ Two articles of one run are on two different themes.
 1. `git checkout main && git pull`. If `blog/index.html` is missing the blog is not merged yet: stop and say so.
    Read `blog/index.html` and the titles of `blog/*/`, then read ONE existing article in full and copy its
    structure exactly: head (title, description, hreflang fr-CA/en-CA, canonical, og, JSON-LD Article), shared header and
-   footer (same `?v=` stamps), `<main class="legal">` with h1, byline `Par Kallistesoft · <time> · Lecture : 3 min`
+   footer (same `?v=` stamps), `<main class="legal">` with h1, byline `Par <a href="/a-propos/">Kallistesoft</a> · <time> · Lecture : 3 min` (EN links to /en/about/)
    (EN `By Kallistesoft · … · 3 min read`), h2 sections, hero SVG, one diagram SVG in `<figure>`+`<figcaption>`,
    `Sources`, `À lire aussi / Related reading`.
 2. Prioritise topics: (1) themes least covered so far, (2) freshness and relevance of the sources today
