@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CI/CD for a small development team — Kallistesoft</title>
+<meta name="description" content="Small-team CI/CD: branch rules, a minimal GitHub Actions pipeline, tests, secrets, rollbacks, mobile signing and a four-week rollout plan.">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="canonical" href="https://kallistesoft.ca/en/blog/ci-cd-small-team/">
+<link rel="alternate" hreflang="fr-CA" href="https://kallistesoft.ca/blog/ci-cd-petite-equipe/">
+<link rel="alternate" hreflang="en-CA" href="https://kallistesoft.ca/en/blog/ci-cd-small-team/">
+<meta property="og:title" content="CI/CD for a small team: the practical guide">
+<meta property="og:description" content="Small-team CI/CD: branch rules, a minimal GitHub Actions pipeline, tests, secrets, rollbacks, mobile signing and a four-week rollout plan.">
+<meta property="og:url" content="https://kallistesoft.ca/en/blog/ci-cd-small-team/">
+<meta name="theme-color" content="#060d24" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f8fc" media="(prefers-color-scheme: light)">
+<script>(function(){var t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t})()</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css?v=20261128">
+<script src="/assets/site.js?v=20261113" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"CI/CD for a small development team","datePublished":"2026-11-28","inLanguage":"en-CA","author":{"@type":"Organization","name":"Kallistesoft","url":"https://kallistesoft.ca/"},"publisher":{"@type":"Organization","name":"Kallistesoft"},"mainEntityOfPage":"https://kallistesoft.ca/en/blog/ci-cd-small-team/"}</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/en/" aria-label="Kallistesoft, home"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#2f6bff"/><path d="M11 14V34M23 14 11 25.5M15 21.5 24 34M37 16.5C35.6 14.7 34 14 32.2 14 29.7 14 28 15.6 28 17.7 28 22.6 37 20.8 37 27.6 37 31.6 34.8 34 31.8 34 29.8 34 28.2 33.1 27 31.4" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>kalliste<span>soft</span></span></a>
+    <nav class="nav" aria-label="Main navigation">
+      <a class="hide-sm" href="/en/#services">Services</a>
+      <a class="hide-sm" href="/en/#work">Work</a>
+      <a class="hide-sm" href="/en/#games">Games</a>
+      <a class="hide-sm" href="/en/#approach">Approach</a>
+      <a class="hide-sm" href="/en/team-audit/">Teams</a>
+      <a class="hide-sm" href="/en/blog/">Blog</a>
+      <a class="lang" href="/blog/ci-cd-petite-equipe/" hreflang="fr" lang="fr">FR</a>
+    </nav>
+    <button class="theme-toggle" type="button" aria-label="Change theme" data-to-light="Switch to light theme" data-to-dark="Switch to dark theme"><svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></button>
+    <a class="btn btn-primary btn-sm" href="/en/#contact">Contact</a>
+  </div>
+</header>
+
+<main class="legal">
+<h1>CI/CD for a small development team</h1>
+<p class="updated">By Kallistesoft · <time datetime="2026-11-28">November 28, 2026</time> · 3 min read</p>
+
+<p>In a large company, continuous delivery is carried by a platform team. In a team of two to ten, you build it yourself. What works: few rules, applied consistently, and automation that grows with the team.</p>
+<figure style="margin:1.5rem 0"><svg viewBox="0 0 670 90" style="width:100%;height:auto" role="img" aria-label="Pipeline: pull request, merge into main, automatic deploy, production" xmlns="http://www.w3.org/2000/svg"><title>Pipeline: pull request, merge into main, automatic deploy, production</title><rect x="10" y="10" width="140" height="70" rx="10" fill="none" stroke="#2f6bff" stroke-width="2"/><text x="80.0" y="42.0" text-anchor="middle" font-size="16" font-weight="700" fill="currentColor">Pull request</text><text x="80.0" y="62.0" text-anchor="middle" font-size="12" fill="currentColor" opacity=".8">review + CI</text><path d="M154 45.0h18m-6 -5l6 5l-6 5" fill="none" stroke="#2f6bff" stroke-width="2" stroke-linecap="round"/><rect x="180" y="10" width="140" height="70" rx="10" fill="none" stroke="#2f6bff" stroke-width="2"/><text x="250.0" y="42.0" text-anchor="middle" font-size="16" font-weight="700" fill="currentColor">Merge</text><text x="250.0" y="62.0" text-anchor="middle" font-size="12" fill="currentColor" opacity=".8">into main</text><path d="M324 45.0h18m-6 -5l6 5l-6 5" fill="none" stroke="#2f6bff" stroke-width="2" stroke-linecap="round"/><rect x="350" y="10" width="140" height="70" rx="10" fill="none" stroke="#2f6bff" stroke-width="2"/><text x="420.0" y="42.0" text-anchor="middle" font-size="16" font-weight="700" fill="currentColor">Deploy</text><text x="420.0" y="62.0" text-anchor="middle" font-size="12" fill="currentColor" opacity=".8">automatic</text><path d="M494 45.0h18m-6 -5l6 5l-6 5" fill="none" stroke="#2f6bff" stroke-width="2" stroke-linecap="round"/><rect x="520" y="10" width="140" height="70" rx="10" fill="none" stroke="#2f6bff" stroke-width="2"/><text x="590.0" y="42.0" text-anchor="middle" font-size="16" font-weight="700" fill="currentColor">Production</text><text x="590.0" y="62.0" text-anchor="middle" font-size="12" fill="currentColor" opacity=".8">rollback ready</text></svg><figcaption style="font-size:.9em;opacity:.8;margin-top:.5rem">The path of a change, from pull request to production.</figcaption></figure>
+<h2>Branches and pull requests</h2>
+<p>One always-deployable main branch, short-lived branches, and minimum rules (<a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches" target="_blank" rel="noopener">branch protection</a>):</p>
+<ul>
+<li>No direct commits to <code>main</code>: everything goes through a pull request.</li>
+<li>At least one review. Working alone? Reread your own pull request the next morning.</li>
+<li>Pull requests readable in fifteen minutes: a 2,000-line one is not reviewed, it is approved.</li>
+<li>Merging allowed only when automated checks pass.</li>
+</ul>
+
+<h2>A minimal pipeline</h2>
+<p>The first pipeline does little, but on every pull request: install, lint, test, build (<a href="https://docs.github.com/en/actions/writing-workflows/quickstart" target="_blank" rel="noopener">GitHub Actions</a>).</p>
+<pre><code>name: CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20, cache: npm }
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build</code></pre>
+<figure style="margin:1.5rem 0"><svg viewBox="0 0 670 90" style="width:100%;height:auto" role="img" aria-label="CI pipeline stages: install, lint, test, build" xmlns="http://www.w3.org/2000/svg"><title>CI pipeline stages: install, lint, test, build</title><rect x="10" y="10" width="140" height="70" rx="10" fill="none" stroke="#2f6bff" stroke-width="2"/><text x="80.0" y="42.0" text-anchor="middle" font-size="16" font-weight="700" fill="currentColor">Install</text><text x="80.0" y="62.0" text-anchor="middle" font-size="12" fill="currentColor" opacity=".8">npm ci</text><path d="M154 45.0h18m-6 -5l6 5l-6 5" fill="none" stroke="#2f6bff" stroke-width="2" stroke-linecap="round"/><rect x="180" y="10" width="140" height="70" rx="10" fill="none" stroke="#2f6bff" stroke-width="2"/><text x="250.0" y="42.0" text-anchor="middle" font-size="16" font-weight="700" fill="currentColor">Lint</text><text x="250.0" y="62.0" text-anchor="middle" font-size="12" fill="currentColor" opacity=".8">style</text><path d="M324 45.0h18m-6 -5l6 5l-6 5" fill="none" stroke="#2f6bff" stroke-width="2" stroke-linecap="round"/><rect x="350" y="10" width="140" height="70" rx="10" fill="none" stroke="#2f6bff" stroke-width="2"/><text x="420.0" y="42.0" text-anchor="middle" font-size="16" font-weight="700" fill="currentColor">Tests</text><text x="420.0" y="62.0" text-anchor="middle" font-size="12" fill="currentColor" opacity=".8">logic</text><path d="M494 45.0h18m-6 -5l6 5l-6 5" fill="none" stroke="#2f6bff" stroke-width="2" stroke-linecap="round"/><rect x="520" y="10" width="140" height="70" rx="10" fill="none" stroke="#2f6bff" stroke-width="2"/><text x="590.0" y="42.0" text-anchor="middle" font-size="16" font-weight="700" fill="currentColor">Build</text><text x="590.0" y="62.0" text-anchor="middle" font-size="12" fill="currentColor" opacity=".8">artifact</text></svg><figcaption style="font-size:.9em;opacity:.8;margin-top:.5rem">The four stages of the minimal pipeline; the merge is blocked if one fails.</figcaption></figure>
+<p>Use <code>npm ci</code> for reproducible installs, cache dependencies, and aim for under ten minutes: beyond that, people work around the pipeline. For gates, start with a linter and formatter, then tests on what is expensive when it breaks (calculations, payments, migrations). Do not chase 100% coverage. Fix or remove a flaky test quickly; rerunning "until it passes" destroys trust.</p>
+
+<h2>Deploy on merge</h2>
+<p>Once the base is stable, deploy when <code>main</code> changes. This site works that way: a merge triggers an action that uploads the files over FTPS. Nothing fancy, but repeatable.</p>
+<pre><code>  deploy:
+    needs: verify
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+      - run: ./scripts/deploy.sh
+        env:
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}</code></pre>
+<p>The <code>environment</code> key lets you require a manual approval (<a href="https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment" target="_blank" rel="noopener">docs</a>).</p>
+
+<h2>Secrets and rollbacks</h2>
+<ul>
+<li>Never put passwords or keys in the repository, even a private one: Git history is permanent. Use <a href="https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions" target="_blank" rel="noopener">GitHub secrets</a> with least privilege (an FTP account limited to the site folder).</li>
+<li>Leak? Revoke first, clean up after.</li>
+<li>Rollback: redeploy a previous commit or revert the merge. Keep database migrations separate from code; dropping a column cannot be undone. Try it once in calm conditions.</li>
+</ul>
+
+<h2>Mobile: build and signing</h2>
+<p>Automate early the build, tests, build number and test distribution (Firebase App Distribution, TestFlight, Google Play test tracks). Signing demands discipline (<a href="https://developer.android.com/studio/publish/app-signing" target="_blank" rel="noopener">Android docs</a>): keys stay out of the repository, stored encoded in secrets and backed up elsewhere, because losing a key can block your updates.</p>
+
+<h2>Not yet</h2>
+<p>Keep a human step for final store publication, avoid exhaustive end-to-end suites (slow and brittle), and resist Kubernetes for an app that fits on one server.</p>
+
+<h2>Four-week plan</h2>
+<ol>
+<li><strong>Week 1:</strong> protect <code>main</code>, require reviews, add a linter.</li>
+<li><strong>Week 2:</strong> minimal CI as a merge gate.</li>
+<li><strong>Week 3:</strong> secrets in GitHub, automatic deploy to a test environment.</li>
+<li><strong>Week 4:</strong> production on merge, rollback rehearsed.</li>
+</ol>
+
+<h2>Conclusion</h2>
+<p>A small team's CI/CD should be reliable and understood by everyone, not impressive. Add the rest when a real problem justifies it.</p>
+
+<h2>Sources</h2>
+<ul>
+<li><a href="https://docs.github.com/en/actions/writing-workflows/quickstart" target="_blank" rel="noopener">Quickstart for GitHub Actions — GitHub Docs</a></li>
+<li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches" target="_blank" rel="noopener">About protected branches — GitHub Docs</a></li>
+<li><a href="https://docs.github.com/en/actions/security-for-github-actions/security-guides/using-secrets-in-github-actions" target="_blank" rel="noopener">Using secrets in GitHub Actions — GitHub Docs</a></li>
+<li><a href="https://docs.github.com/en/actions/deployment/targeting-different-environments/using-environments-for-deployment" target="_blank" rel="noopener">Using environments for deployment — GitHub Docs</a></li>
+<li><a href="https://developer.android.com/studio/publish/app-signing" target="_blank" rel="noopener">Sign your app — Android Developers</a></li>
+</ul>
+
+<h2>Related reading</h2>
+<ul>
+<li><a href="/en/blog/ai-coding-assistant/">Using an AI coding assistant</a></li>
+<li><a href="/en/blog/add-llm-to-app/">Adding an LLM feature to your app</a></li>
+<li><a href="/en/blog/">Back to the blog</a></li>
+</ul>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Kallistesoft · 9536-3529 Québec inc. · 529 4th Avenue, Saint-Jean-sur-Richelieu, Quebec J2X 1X3, Canada · <a href="tel:+14389239562">438-923-9562</a></span>
+    <nav>
+      <a href="/en/brick-shatter/">Brick Shatter</a>
+      <a href="/en/block-daily/">Block Daily</a>
+      <a href="/en/unarrow/">Unarrow</a>
+      <a href="/en/void-raid/">Void Raid</a>
+      <a href="/en/neon-pop/">Neon Pop</a>
+      <a href="/en/neon-snake/">Neon Snake</a>
+      <a href="/en/neon-stack/">Neon Stack</a>
+      <a href="/en/team-audit/">Team audit</a>
+      <a href="/en/privacy/">Privacy</a>
+      <a href="mailto:contact@kallistesoft.ca">Contact</a>
+      <a href="/" hreflang="fr">Français</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

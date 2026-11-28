@@ -294,3 +294,13 @@ a.store svg { width: 18px; height: 18px; }
 .video-modal .close { position: absolute; right: 0; top: -56px; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .3); background: rgba(10, 16, 36, .7); color: #fff; cursor: pointer; display: grid; place-items: center; transition: background .3s; }
 .video-modal .close:hover { background: var(--accent); }
 .video-modal .close svg { width: 22px; height: 22px; }
+
+/* Blog articles */
+.legal figure { margin: 1.8em 0; }
+.legal figure svg { display: block; width: 100%; height: auto; max-width: 100%; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-alt, transparent); color: var(--muted); }
+.legal figcaption { color: var(--muted2); font-size: .88rem; margin-top: .6em; }
+.legal pre { overflow-x: auto; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; font-size: .88rem; }
+.legal table { width: 100%; border-collapse: collapse; font-size: .95rem; margin: 1.4em 0; display: block; overflow-x: auto; }
+.legal th, .legal td { border-bottom: 1px solid var(--line); padding: 8px 10px; text-align: left; color: var(--muted); }
+.legal th { color: var(--text); }
+.legal .sources a, .legal a { overflow-wrap: anywhere; }
